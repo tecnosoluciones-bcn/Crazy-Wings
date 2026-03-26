@@ -59,22 +59,30 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 18px;
       padding: 14px 18px;
-      border-radius: 999px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
     }
 
     .brand { display: flex; align-items: center; gap: 14px; }
     .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
       display: grid;
       place-items: center;
-      font-weight: 900;
-      color: #101114;
-      background: linear-gradient(135deg, var(--orange-2), var(--orange), var(--red));
-      box-shadow: 0 12px 30px rgba(255,122,24,0.28);
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(255,122,24,.18), rgba(255,61,61,.14));
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 12px 30px rgba(255,122,24,0.20);
+      flex: 0 0 52px;
+    }
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .brand-text strong { display: block; font-size: 0.98rem; }
     .brand-text span { display: block; color: var(--muted); font-size: 0.84rem; }
@@ -89,12 +97,47 @@
       font-weight: 600;
     }
     .nav a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+    .nav a.active,
+    .nav a:first-child {
+      color: var(--text);
+      background: linear-gradient(135deg, rgba(255,179,71,0.16), rgba(255,122,24,0.10));
+      border: 1px solid rgba(255,179,71,0.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+    }
 
     .hero-wrap {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 28px;
+      grid-template-columns: 1fr;
+      gap: 22px;
       align-items: stretch;
+    }
+
+    .hero-unified {
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 26px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-unified::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 78% 22%, rgba(255,122,24,.14), transparent 20%),
+        radial-gradient(circle at 18% 80%, rgba(255,61,61,.10), transparent 22%);
+      pointer-events: none;
+    }
+    .hero-main,
+    .hero-side {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-side {
+      padding-left: 10px;
+      border-left: 1px solid rgba(255,255,255,.06);
     }
 
     .hero-copy,
@@ -239,7 +282,12 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
     }
-    .info-card, .social-card, .story-card, .menu-card, .map-card { padding: 28px; }
+    .info-card, .social-card, .story-card, .menu-card, .map-card {
+      padding: 28px;
+      border: 1px solid rgba(255,122,24,0.35);
+      box-shadow: 0 0 0 1px rgba(255,122,24,0.15), 0 18px 60px rgba(0,0,0,0.45);
+      background: var(--panel);
+    }
     .card-title { margin: 0 0 18px; font-size: 1.5rem; letter-spacing: -0.04em; }
 
     .detail-list { display: grid; gap: 14px; }
@@ -500,12 +548,12 @@
       position: fixed;
       right: 22px;
       z-index: 60;
-      width: 66px;
-      height: 66px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      color: #08120b;
+      color: #fff;
       box-shadow: 0 18px 40px rgba(0,0,0,0.25);
       font-size: 1rem;
       font-weight: 900;
@@ -518,6 +566,7 @@
       bottom: 22px;
       background: linear-gradient(135deg, #4af38a, var(--green));
       box-shadow: 0 18px 40px rgba(37,211,102,0.34);
+      color: #0f1b12;
     }
     .floating-social.instagram {
       bottom: 176px;
@@ -540,6 +589,8 @@
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
     @media (max-width: 1080px) {
+      .hero-unified { grid-template-columns: 1fr; }
+      .hero-side { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,.06); padding-top: 22px; }
       .delivery-links[style] { grid-template-columns: 1fr !important; }
       .hero-wrap, .cards-3, .two-col, .cta-box, .reviews-grid { grid-template-columns: 1fr; }
     }
@@ -548,7 +599,7 @@
       .container { width: min(var(--max), calc(100% - 20px)); }
       .topbar-inner { border-radius: 24px; align-items: flex-start; flex-direction: column; }
       .nav { width: 100%; justify-content: flex-start; }
-      .hero-copy, .hero-card, .info-card, .social-card, .story-card, .menu-card, .map-card, .cta-box, .reviews-wrap { padding: 22px; }
+      .hero-copy, .hero-card, .info-card, .social-card, .story-card, .menu-card, .map-card, .cta-box, .reviews-wrap, .hero-unified { padding: 22px; }
       .hero h1 { font-size: clamp(2.5rem, 12vw, 4rem); }
       .menu-grid { grid-template-columns: 1fr; }
       .actions, .cta-actions { flex-direction: column; }
@@ -558,6 +609,11 @@
       .floating-social.facebook { bottom: 84px; }
       .floating-whatsapp { bottom: 18px; }
     }
+  
+    @media (max-width: 1080px) {
+      .hero-card-inner > div[style*="grid-template-columns: 1.1fr .9fr"],
+      .menu-card > div[style*="grid-template-columns:repeat(3,minmax(0,1fr))"] { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
@@ -566,7 +622,23 @@
       <div class="topbar">
         <div class="topbar-inner glass fade-up">
           <div class="brand">
-            <div class="brand-mark">CW</div>
+            <div class="brand-mark">
+              <img src="mascota-cw.png" alt="Mascota Crazy Wings">
+            </div>
+            <div class="brand-text">
+              <strong>Crazy Wings BCN</strong>
+              <span>Street Food Colombiano en Barcelona</span>
+            </div>
+          </div>
+          <nav class="nav">
+            <a href="#inicio" class="active">Inicio</a>
+            <a href="#informacion">Información</a>
+            <a href="#menu">Especialidades</a>
+            <a href="#platos">Platos</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </div>
+      </div>
             <div class="brand-text">
               <strong>Crazy Wings BCN</strong>
               <span>Street Food Colombiano en Barcelona</span>
@@ -582,31 +654,34 @@
       </div>
 
       <div class="hero-wrap">
-        <section class="hero-copy glass fade-up delay-1">
-          <div class="eyebrow">Sabor, locura y buena vibra</div>
-          <h1>Crazy Wings <span>BCN</span></h1>
+        <section class="hero-unified glass fade-up delay-1">
+          <div class="hero-main">
+            <div class="eyebrow">Sabor, locura y buena vibra</div>
+            <h1>Crazy Wings <span>BCN</span></h1>
           <p class="lead">
-            Restaurante de comida rápida colombiana con una identidad potente, estética inspirada en cómics de vieja guardia y alma de food truck. Un sitio diseñado para quienes buscan una experiencia gastronómica diferente, rápida y con personalidad.
-          </p>
-          <div class="stats">
-            <div class="pill">Terraza</div>
-            <div class="pill">Platos veganos</div>
-            <div class="pill">Wi‑Fi</div>
-            <div class="pill">Precio medio: 10–20 €</div>
+              Restaurante de comida rápida colombiana con mucha personalidad, estética inspirada en cómics de vieja guardia y alma de food truck. Un sitio pensado para venir con ganas de disfrutar, comer muy bien y quedarse con ganas de volver.
+            </p>
+            <div class="stats">
+              <div class="pill">Terraza</div>
+              <div class="pill">Platos veganos</div>
+              <div class="pill">Wi‑Fi</div>
+              <div class="pill">Precio medio: 10–20 €</div>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://drive.google.com/file/d/1iLZQvjmu5ORGtHCh0nDIccwX65xw_f1y/view" target="_blank" rel="noopener noreferrer">Ver menú</a>
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=C%2F+de+Padilla%2C+386%2C+Horta-Guinard%C3%B3%2C+08026+Barcelona" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+            </div>
           </div>
-          <div class="actions">
-            <a class="btn btn-primary" href="https://linktr.ee/Crazywingsbcn" target="_blank" rel="noopener noreferrer">Ver menú</a>
-            <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=C%2F+de+Padilla%2C+386%2C+Horta-Guinard%C3%B3%2C+08026+Barcelona" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
-          </div>
-        </section>
 
-        <aside class="hero-card glass fade-up delay-2" id="menu">
-          <div class="hero-card-inner">
-            <div class="card-kicker">Crazy Wings & + BCN</div>
-            <h2>Street Food colombiano con presencia, carácter y un sabor que destaca.</h2>
-            <p>
-              Especializados en alitas con salsas únicas, hot dogs, burgers, tequeños, arepas y más. Una propuesta pensada para foodies, amantes del picante, grupos de amigos y clientes que buscan algo distinto en Barcelona.
+          <div class="hero-side" id="menu">
+            <div style="display:flex; justify-content:center; margin-bottom:18px;">
+              <img src="logo-crazy-wings.png" alt="Logo Crazy Wings BCN" style="width:300px; max-width:100%; filter: drop-shadow(0 24px 44px rgba(255,122,24,.28));">
+            </div>
+            
+            <h2 style="margin:12px 0 12px; font-size:clamp(1.8rem,3vw,2.9rem); line-height:1.05; letter-spacing:-0.05em;">Street Food colombiano con presencia, carácter y un sabor que no pasa desapercibido.</h2>
+            <p style="margin:0; color:var(--muted); line-height:1.75;">
+              Especializados en alitas con salsas únicas, hot dogs, burgers, tequeños, arepas y más. Una propuesta pensada para foodies, amantes del picante, grupos de amigos y clientes que buscan comer rico en un sitio con rollo propio.
             </p>
             <div class="menu-grid">
               <div class="menu-item">Alitas con salsas únicas</div>
@@ -620,7 +695,7 @@
               <strong>Programa Crazy Fans:</strong> cada visita te acerca a un premio delicioso.
             </div>
           </div>
-        </aside>
+        </section>
       </div>
     </div>
   </header>
@@ -655,15 +730,15 @@
             </div>
             <div class="delivery-links">
               <a class="delivery-link glovo" href="https://glovoapp.com/es/es/barcelona/stores/crazy-wings-bcn-bcn?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener noreferrer">
-                <span class="delivery-logo">G</span>
+                <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/glovo-1.svg" alt="Glovo" style="width:100%;height:100%;object-fit:contain;"></span>
                 <span class="delivery-text"><strong>Glovo</strong><small>Entrega a domicilio</small></span>
               </a>
               <a class="delivery-link justeat" href="https://www.just-eat.es/restaurants-crazy-wings-and--bcn-barcelona/menu?serviceType=collection&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener noreferrer">
-                <span class="delivery-logo">JE</span>
+                <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/just-eat.svg" alt="Just Eat" style="width:100%;height:100%;object-fit:contain;"></span>
                 <span class="delivery-text"><strong>Just Eat</strong><small>Pedido online</small></span>
               </a>
               <a class="delivery-link uber" href="https://www.ubereats.com/es/store/crazy-wings-%26-%2B-bcn/NdfNtVPbWs2m6wFVDTRvkw?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer">
-                <span class="delivery-logo">UE</span>
+                <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/uber-eats.svg" alt="Uber Eats" style="width:100%;height:100%;object-fit:contain;"></span>
                 <span class="delivery-text"><strong>Uber Eats</strong><small>Recogida / pedido online</small></span>
               </a>
             </div>
@@ -673,12 +748,16 @@
         <article class="story-card glass fade-up delay-2">
           <h3 class="card-title">La experiencia Crazy Wings</h3>
           <p>
-            Crazy Wings BCN mezcla comida callejera colombiana, estética visual potente y una propuesta comercial clara. El local combina energía urbana, identidad propia y una carta que conecta con un público que valora el sabor, la rapidez y una imagen con personalidad.
+            Crazy Wings BCN mezcla comida callejera colombiana, una imagen muy potente y una propuesta comercial clara. Aquí no solo vienes a comer: vienes a pasarlo bien, probar platos con personalidad y disfrutar de un ambiente con identidad propia.
           </p>
           <div class="feature-list">
             <div class="pill">Ideal para grupos</div>
             <div class="pill">Amantes del picante</div>
             <div class="pill">Ambiente con estilo</div>
+          </div>
+          <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:18px; align-items:center;">
+            
+            <p style="margin:0; max-width:260px; color:var(--muted);">La mascota y el logo ayudan a reforzar una imagen más memorable, más divertida y más reconocible para redes, cartas y promociones.</p>
           </div>
         </article>
       </div>
@@ -710,8 +789,28 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="platos">
       <div class="container">
+        <div class="menu-card glass fade-up" style="margin-bottom:24px;">
+          <h3 class="card-title">Ejemplos de platos que apetecen de verdad</h3>
+          <p>
+            Para que la web transmita mejor lo que ofrecéis, conviene enseñar ejemplos claros de lo que el cliente puede pedir. Así la propuesta se entiende más rápido y entra mejor por los ojos.
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:18px;">
+            <div class="delivery-link" style="display:block; padding:18px; background:linear-gradient(180deg, rgba(255,122,24,.10), rgba(255,255,255,.02));">
+              <div style="font-size:1.8rem; margin-bottom:10px;">🍗</div>
+              <div class="delivery-text"><strong>Mix de alitas y costillas</strong><small>Potente, sabroso y perfecto para compartir.</small></div>
+            </div>
+            <div class="delivery-link" style="display:block; padding:18px; background:linear-gradient(180deg, rgba(255,61,61,.10), rgba(255,255,255,.02));">
+              <div style="font-size:1.8rem; margin-bottom:10px;">🍔</div>
+              <div class="delivery-text"><strong>Crazy Burguer</strong><small>Una burger con personalidad, ideal para quien viene con hambre.</small></div>
+            </div>
+            <div class="delivery-link" style="display:block; padding:18px; background:linear-gradient(180deg, rgba(255,179,71,.10), rgba(255,255,255,.02));">
+              <div style="font-size:1.8rem; margin-bottom:10px;">🌭</div>
+              <div class="delivery-text"><strong>Perros y tequeños</strong><small>Favoritos del público para picar, compartir y repetir.</small></div>
+            </div>
+          </div>
+        </div>
         <div class="menu-card glass fade-up">
           <h3 class="card-title">Pide a domicilio o para recoger</h3>
           <p>
@@ -719,15 +818,15 @@
           </p>
           <div class="delivery-links" style="margin-top:18px; grid-template-columns: repeat(3, minmax(0, 1fr)); display:grid;">
             <a class="delivery-link glovo" href="https://glovoapp.com/es/es/barcelona/stores/crazy-wings-bcn-bcn?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener noreferrer">
-              <span class="delivery-logo">G</span>
+              <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/glovo-1.svg" alt="Glovo" style="width:100%;height:100%;object-fit:contain;"></span>
               <span class="delivery-text"><strong>Glovo</strong><small>A domicilio</small></span>
             </a>
             <a class="delivery-link justeat" href="https://www.just-eat.es/restaurants-crazy-wings-and--bcn-barcelona/menu?serviceType=collection&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener noreferrer">
-              <span class="delivery-logo">JE</span>
+              <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/just-eat.svg" alt="Just Eat" style="width:100%;height:100%;object-fit:contain;"></span>
               <span class="delivery-text"><strong>Just Eat</strong><small>Pedido online</small></span>
             </a>
             <a class="delivery-link uber" href="https://www.ubereats.com/es/store/crazy-wings-%26-%2B-bcn/NdfNtVPbWs2m6wFVDTRvkw?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer">
-              <span class="delivery-logo">UE</span>
+              <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/uber-eats.svg" alt="Uber Eats" style="width:100%;height:100%;object-fit:contain;"></span>
               <span class="delivery-text"><strong>Uber Eats</strong><small>Pickup / online</small></span>
             </a>
           </div>
@@ -766,11 +865,6 @@
                   ⭐ Añadir reseña
                 </a>
               </div>
-            </div>
-                <h3 class="card-title" style="margin-top:16px;">Opiniones destacadas de Google Maps</h3>
-                <p class="reviews-intro">Sección construida con reseñas aportadas del perfil de Google Maps del negocio. Refuerza confianza, prueba social y conversión.</p>
-              </div>
-              <div class="reviews-badge">★★★★★ Valoraciones 5/5 destacadas</div>
             </div>
 
             <div class="reviews-grid">
@@ -880,8 +974,14 @@
     </div>
   </footer>
 
-  <a class="floating-social instagram" href="https://www.instagram.com/crazywingsbcn/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram">IG</a>
-  <a class="floating-social facebook" href="https://www.facebook.com/CRAZYWINGSBCN" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook">FB</a>
-  <a class="floating-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">WA</a>
+  <a class="floating-social instagram" href="https://www.instagram.com/crazywingsbcn/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram">
+    <svg viewBox="0 0 24 24" aria-hidden="true" style="width:26px;height:26px;fill:currentColor;"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5Zm8.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26ZM12 6.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 6.5Zm0 1.5A4 4 0 1 0 16 12a4 4 0 0 0-4-4Z"/></svg>
+  </a>
+  <a class="floating-social facebook" href="https://www.facebook.com/CRAZYWINGSBCN" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook">
+    <svg viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px;fill:currentColor;"><path d="M13.5 22v-8.2h2.77l.41-3.2H13.5V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.14c-.29-.04-1.28-.14-2.43-.14-2.4 0-4.04 1.46-4.04 4.15v2.31H7.6v3.2h2.72V22h3.18Z"/></svg>
+  </a>
+  <a class="floating-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true" style="width:26px;height:26px;fill:currentColor;"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.16 1.59 5.97L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.46-8.44ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.74.98 1-3.65-.23-.38a9.86 9.86 0 0 1-1.51-5.25c0-5.47 4.45-9.92 9.92-9.92 2.65 0 5.13 1.03 7 2.91a9.84 9.84 0 0 1 2.9 7c0 5.47-4.45 9.91-9.92 9.91Zm5.44-7.42c-.3-.15-1.78-.88-2.06-.98-.28-.1-.49-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.68-2.1-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.69-1.66-.95-2.28-.25-.6-.5-.52-.69-.53h-.59c-.2 0-.53.08-.8.38-.28.3-1.06 1.04-1.06 2.55 0 1.5 1.08 2.95 1.23 3.15.15.2 2.13 3.25 5.16 4.56.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.44.25-.7.25-1.31.17-1.43-.08-.12-.28-.2-.58-.35Z"/></svg>
+  </a>
 </body>
 </html>
