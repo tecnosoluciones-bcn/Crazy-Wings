@@ -385,6 +385,25 @@
       font-weight: 700;
       font-size: .9rem;
     }
+
+    .review-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffb347, #ff7a18);
+      color: #111;
+      font-weight: 800;
+      font-size: .9rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 25px rgba(255,122,24,0.25);
+      transition: var(--transition);
+    }
+    .review-action:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 16px 35px rgba(255,122,24,0.35);
+    }
     .reviews-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -741,6 +760,16 @@
                 <h3 class="card-title" style="margin-top:16px;">Opiniones destacadas de Google Maps</h3>
                 <p class="reviews-intro">Sección construida con reseñas aportadas del perfil de Google Maps del negocio. Refuerza confianza, prueba social y conversión.</p>
               </div>
+              <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+                <div class="reviews-badge">★★★★★ Valoraciones 5/5 destacadas</div>
+                <a class="review-action" href="https://www.google.com/search?sca_esv=4e0bfa84728bf4dd&sxsrf=ANbL-n4pMLPsmrIJlWJ1eNJZif9xzlmumQ:1774562317922&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaeKKLo-BZYmR_JZAchwutxG23Ojb8ilCa02_DYa9vYEbAodjWMFMr-SWa_fPYHYWumyKEJyfk0rh5dW5DQ5nWEH64kAjJt3DI9NXcK-pPpgMozQzA%3D%3D&q=Crazy+Wings+%26+%2B+Bcn+Rese%C3%B1as&sa=X&ved=2ahUKEwjRut3kx76TAxWRT6QEHWz8EvwQ0bkNegQIPRAH&biw=1920&bih=945&dpr=1" target="_blank" rel="noopener noreferrer">
+                  ⭐ Añadir reseña
+                </a>
+              </div>
+            </div>
+                <h3 class="card-title" style="margin-top:16px;">Opiniones destacadas de Google Maps</h3>
+                <p class="reviews-intro">Sección construida con reseñas aportadas del perfil de Google Maps del negocio. Refuerza confianza, prueba social y conversión.</p>
+              </div>
               <div class="reviews-badge">★★★★★ Valoraciones 5/5 destacadas</div>
             </div>
 
@@ -856,4 +885,3 @@
   <a class="floating-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">WA</a>
 </body>
 </html>
-
