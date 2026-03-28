@@ -222,6 +222,24 @@
       background: rgba(255,255,255,0.04);
       color: var(--text);
     }
+    .btn-reserva {
+      color: #1b110a;
+      background: linear-gradient(135deg, #ffd27a, #ffb347, #ff7a18);
+      box-shadow: 0 16px 34px rgba(255,122,24,0.26);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-reserva::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 70%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+      transform: skewX(-20deg);
+      animation: shine 3.2s infinite;
+    }
     .btn-whatsapp {
       border-color: rgba(37, 211, 102, 0.35);
       background: rgba(37,211,102,0.12);
@@ -578,6 +596,35 @@
       background: linear-gradient(135deg, #3b5998, var(--blue));
       color: white;
     }
+    .floating-social.reserva {
+      bottom: 254px;
+      background: linear-gradient(135deg, #ffd27a, #ffb347, #ff7a18);
+      color: #1b110a;
+      box-shadow: 0 18px 40px rgba(255,122,24,0.30);
+    }
+    .floating-social.reserva::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,179,71,.35);
+      animation: pulseReserva 2.4s infinite;
+    }
+    .floating-social.reserva::after {
+      content: "Reservar";
+      position: absolute;
+      right: 76px;
+      white-space: nowrap;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(20,20,26,.92);
+      border: 1px solid rgba(255,179,71,.24);
+      color: #ffe3bf;
+      font-size: .84rem;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      box-shadow: 0 12px 28px rgba(0,0,0,.25);
+    }
 
     .fade-up {
       opacity: 0;
@@ -587,6 +634,15 @@
     .delay-1 { animation-delay: .08s; }
     .delay-2 { animation-delay: .16s; }
     @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes shine {
+      0% { left: -120%; }
+      55%, 100% { left: 140%; }
+    }
+    @keyframes pulseReserva {
+      0% { transform: scale(1); opacity: .9; }
+      70% { transform: scale(1.12); opacity: 0; }
+      100% { transform: scale(1.12); opacity: 0; }
+    }
 
     @media (max-width: 1080px) {
       .hero-unified { grid-template-columns: 1fr; }
@@ -605,6 +661,8 @@
       .actions, .cta-actions { flex-direction: column; }
       .btn { width: 100%; }
       .floating-social, .floating-whatsapp { width: 58px; height: 58px; right: 14px; font-size: .9rem; }
+      .floating-social.reserva { bottom: 216px; }
+      .floating-social.reserva::after { display: none; }
       .floating-social.instagram { bottom: 150px; }
       .floating-social.facebook { bottom: 84px; }
       .floating-whatsapp { bottom: 18px; }
@@ -636,6 +694,8 @@
             <a href="#menu">Especialidades</a>
             <a href="#platos">Platos</a>
             <a href="#contacto">Contacto</a>
+            <a href="#reservas">Reservas</a>
+            <a href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer" class="active">Reservar</a>
           </nav>
         </div>
       </div>
@@ -669,6 +729,7 @@
             </div>
             <div class="actions">
               <a class="btn btn-primary" href="https://drive.google.com/file/d/1iLZQvjmu5ORGtHCh0nDIccwX65xw_f1y/view" target="_blank" rel="noopener noreferrer">Ver menú</a>
+              <a class="btn btn-reserva" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">🍽️ Reservar mesa</a>
               <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=C%2F+de+Padilla%2C+386%2C+Horta-Guinard%C3%B3%2C+08026+Barcelona" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
               <a class="btn btn-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
             </div>
@@ -789,6 +850,60 @@
       </div>
     </section>
 
+    <section class="section" id="reservas">
+      <div class="container">
+        <div class="cta-box glass fade-up" style="margin-bottom:24px; border:1px solid rgba(255,179,71,0.18); background:linear-gradient(135deg, rgba(255,179,71,0.14), rgba(255,122,24,0.10), rgba(255,255,255,0.03));">
+          <div>
+            <h3>Reserva tu mesa de forma rápida y profesional</h3>
+            <p>
+              Crazy Wings BCN ya dispone de un sistema de reservas activo a través de Google y su partner de reservas. Desde la web puedes redirigir al cliente a ese mismo flujo para que las reservas queden centralizadas y bien gestionadas.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-reserva" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">🍽️ Reservar ahora</a>
+            <a class="btn btn-secondary" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20consultar%20por%20una%20reserva%20de%20mesa." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="cards-3">
+          <article class="info-card glass fade-up">
+            <h3 class="card-title">Cómo funciona</h3>
+            <div class="detail-list">
+              <div class="detail-item"><strong>Reserva centralizada</strong>El cliente entra al mismo sistema que aparece en Google Maps.</div>
+              <div class="detail-item"><strong>Disponibilidad real</strong>Se muestran horas y opciones de reserva según el servicio activo.</div>
+              <div class="detail-item"><strong>Más confianza</strong>El usuario reserva desde un entorno conocido y profesional.</div>
+            </div>
+          </article>
+
+          <article class="social-card glass fade-up delay-1">
+            <h3 class="card-title">Ideal para el cliente</h3>
+            <div class="feature-list" style="margin-top:0;">
+              <div class="pill">Reserva en pocos pasos</div>
+              <div class="pill">Fecha y hora claras</div>
+              <div class="pill">Sistema profesional</div>
+              <div class="pill">Consulta por WhatsApp</div>
+            </div>
+            <p style="margin-top:18px; color:var(--muted); line-height:1.75;">Así evitas duplicidades y mantienes todas las reservas en el mismo canal operativo del restaurante.</p>
+            <div class="detail-list" style="margin-top:18px;">
+              <div class="detail-item"><strong>Reserva directa</strong>El cliente entra directamente al calendario de disponibilidad y evita pasos innecesarios.</div>
+              <div class="detail-item"><strong>Menos fricción</strong>Cuantos menos clics tenga que hacer el usuario, más opciones hay de que complete la reserva.</div>
+              <div class="detail-item"><strong>Mejor conversión</strong>La web empuja a reservar desde varios puntos clave sin romper la experiencia de navegación.</div>
+            </div>
+          </article>
+
+          <article class="story-card glass fade-up delay-2">
+            <h3 class="card-title">Reserva y luego disfruta</h3>
+            <p>
+              Una vez confirmada la mesa, el cliente ya entra con mejor predisposición a pedir, repetir y recomendar. Integrar bien la reserva mejora imagen, organización y conversión.
+            </p>
+            <div class="actions" style="margin-top:18px;">
+              <a class="btn btn-reserva" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">Abrir reservas</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="platos">
       <div class="container">
         <div class="menu-card glass fade-up" style="margin-bottom:24px;">
@@ -842,6 +957,7 @@
             <p>Reserva, solicita información o envía tu pedido de forma directa. Este archivo está hecho en HTML puro para editarlo fácilmente en GitHub.</p>
           </div>
           <div class="cta-actions">
+            <a class="btn btn-reserva" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">🍽️ Reservar mesa</a>
             <a class="btn btn-primary" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">WhatsApp</a>
             <a class="btn btn-secondary" href="mailto:crazywingsbcn@hotmail.com">Correo</a>
           </div>
@@ -979,6 +1095,9 @@
   </a>
   <a class="floating-social facebook" href="https://www.facebook.com/CRAZYWINGSBCN" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook">
     <svg viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px;fill:currentColor;"><path d="M13.5 22v-8.2h2.77l.41-3.2H13.5V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.14c-.29-.04-1.28-.14-2.43-.14-2.4 0-4.04 1.46-4.04 4.15v2.31H7.6v3.2h2.72V22h3.18Z"/></svg>
+  </a>
+  <a class="floating-social reserva" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer" aria-label="Reservar mesa" title="Reservar mesa">
+    <svg viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px;fill:currentColor;"><path d="M3 4.75A2.75 2.75 0 0 1 5.75 2h12.5A2.75 2.75 0 0 1 21 4.75v11.5A2.75 2.75 0 0 1 18.25 19H12.5l-4.86 3.64A.75.75 0 0 1 6.5 22v-3H5.75A2.75 2.75 0 0 1 3 16.25V4.75ZM5.75 3.5c-.69 0-1.25.56-1.25 1.25v11.5c0 .69.56 1.25 1.25 1.25H7.25a.75.75 0 0 1 .75.75v2.25l3.96-2.97a.75.75 0 0 1 .45-.15h5.84c.69 0 1.25-.56 1.25-1.25V4.75c0-.69-.56-1.25-1.25-1.25H5.75ZM7 7.25A.75.75 0 0 1 7.75 6.5h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 7 7.25Zm0 4A.75.75 0 0 1 7.75 10.5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1-.75-.75Zm0 4a.75.75 0 0 1 .75-.75h5a.75.75 0 0 1 0 1.5h-5a.75.75 0 0 1-.75-.75Z"/></svg>
   </a>
   <a class="floating-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true" style="width:26px;height:26px;fill:currentColor;"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.16 1.59 5.97L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.46-8.44ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.74.98 1-3.65-.23-.38a9.86 9.86 0 0 1-1.51-5.25c0-5.47 4.45-9.92 9.92-9.92 2.65 0 5.13 1.03 7 2.91a9.84 9.84 0 0 1 2.9 7c0 5.47-4.45 9.91-9.92 9.91Zm5.44-7.42c-.3-.15-1.78-.88-2.06-.98-.28-.1-.49-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.68-2.1-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.69-1.66-.95-2.28-.25-.6-.5-.52-.69-.53h-.59c-.2 0-.53.08-.8.38-.28.3-1.06 1.04-1.06 2.55 0 1.5 1.08 2.95 1.23 3.15.15.2 2.13 3.25 5.16 4.56.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.44.25-.7.25-1.31.17-1.43-.08-.12-.28-.2-.58-.35Z"/></svg>
