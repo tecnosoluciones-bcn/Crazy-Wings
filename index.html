@@ -4,25 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Crazy Wings BCN - Street Food Colombiano en Barcelona. Alitas, burgers, hot dogs, tequeños, arepas y más. Terraza, Wi‑Fi, platos veganos y contacto directo por WhatsApp." />
-  <meta name="theme-color" content="#0f0f12" />
+  <meta name="theme-color" content="#f4ede5" />
   <title>Crazy Wings BCN | Street Food Colombiano en Barcelona</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0b0f;
-      --panel: rgba(15, 15, 20, 0.78);
-      --line: rgba(255,255,255,0.08);
-      --text: #f5f7fb;
-      --muted: #b7becf;
-      --orange: #ff7a18;
-      --orange-2: #ffb347;
-      --red: #ff3d3d;
+      --bg: #f4ede5;
+      --panel: rgba(255, 251, 246, 0.90);
+      --panel-strong: rgba(255, 248, 241, 0.96);
+      --line: rgba(96, 63, 41, 0.10);
+      --text: #231814;
+      --muted: #68554a;
+      --orange: #d86b1f;
+      --orange-2: #efb36b;
+      --red: #b4432a;
       --green: #25d366;
       --blue: #1877f2;
       --pink: #e1306c;
-      --shadow: 0 18px 60px rgba(0,0,0,0.45);
+      --shadow: 0 18px 60px rgba(80, 45, 24, 0.10);
       --radius: 24px;
       --max: 1220px;
       --transition: 220ms cubic-bezier(.2,.8,.2,1);
@@ -35,10 +36,9 @@
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(255,122,24,0.22), transparent 28%),
-        radial-gradient(circle at top right, rgba(255,61,61,0.18), transparent 24%),
-        radial-gradient(circle at bottom center, rgba(255,179,71,0.10), transparent 26%),
-        linear-gradient(180deg, #0a0a0d 0%, #0c0d12 55%, #090a0e 100%);
+        radial-gradient(circle at top left, rgba(216,107,31,0.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(239,179,107,0.13), transparent 20%),
+        linear-gradient(180deg, #f8f3ed 0%, #f1e8de 50%, #e9ddd0 100%);
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -53,8 +53,8 @@
       box-shadow: var(--shadow);
     }
 
-    .hero { padding: 28px 0 56px; }
-    .topbar { position: sticky; top: 14px; z-index: 30; margin-bottom: 26px; }
+    .hero { padding: 26px 0 54px; }
+    .topbar { position: sticky; top: 14px; z-index: 30; margin-bottom: 24px; }
     .topbar-inner {
       display: flex;
       align-items: center;
@@ -62,10 +62,11 @@
       gap: 18px;
       padding: 14px 18px;
       border-radius: 22px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      background: linear-gradient(135deg, rgba(255,255,255,0.80), rgba(255,247,239,0.78));
+      box-shadow: 0 18px 40px rgba(80,45,24,0.08);
     }
 
-    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
     .brand-mark {
       width: 52px;
       height: 52px;
@@ -73,9 +74,9 @@
       display: grid;
       place-items: center;
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(255,122,24,.18), rgba(255,61,61,.14));
+      background: linear-gradient(135deg, rgba(255,122,24,.16), rgba(255,61,61,.12));
       border: 1px solid rgba(255,255,255,.08);
-      box-shadow: 0 12px 30px rgba(255,122,24,0.20);
+      box-shadow: 0 12px 30px rgba(216,107,31,0.18);
       flex: 0 0 52px;
     }
     .brand-mark img {
@@ -84,50 +85,79 @@
       object-fit: cover;
       display: block;
     }
-    .brand-text strong { display: block; font-size: 0.98rem; }
+    .brand-text strong { display: block; font-size: 0.98rem; color: var(--text); }
     .brand-text span { display: block; color: var(--muted); font-size: 0.84rem; }
 
     .nav { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .nav a {
-      color: var(--muted);
-      padding: 10px 14px;
+      color: #3a2a22;
+      padding: 10px 16px;
       border-radius: 999px;
       transition: var(--transition);
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       font-weight: 600;
+      border: 1px solid rgba(216,107,31,0.15);
+      background: rgba(255,255,255,0.62);
+      box-shadow: 0 8px 20px rgba(80,45,24,0.04);
     }
-    .nav a:hover { color: var(--text); background: rgba(255,255,255,0.05); }
-    .nav a.active,
-    .nav a:first-child {
+    .nav a:hover {
+      color: #fff;
+      background: linear-gradient(135deg, #ffb347, #ff7a18);
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(216,107,31,0.18);
+    }
+    .nav-reserve {
+      color: #fff !important;
+      background: linear-gradient(135deg, #ffb347, #ff7a18) !important;
+      border-color: transparent !important;
+      box-shadow: 0 14px 30px rgba(216,107,31,0.22) !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .nav-reserve::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
+      transform: skewX(-20deg);
+      animation: shine 3.4s infinite;
+    }
+    .nav a.active {
       color: var(--text);
       background: linear-gradient(135deg, rgba(255,179,71,0.16), rgba(255,122,24,0.10));
       border: 1px solid rgba(255,179,71,0.14);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
     }
 
     .hero-wrap {
       display: grid;
       grid-template-columns: 1fr;
       gap: 22px;
-      align-items: stretch;
     }
 
     .hero-unified {
-      padding: 26px;
+      padding: 32px;
       display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      gap: 26px;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 30px;
       align-items: center;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(135deg, rgba(255,253,250,.97), rgba(246,237,227,.94));
+      box-shadow: 0 26px 76px rgba(74,44,23,.12);
+      border-radius: var(--radius);
     }
     .hero-unified::before {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 78% 22%, rgba(255,122,24,.14), transparent 20%),
-        radial-gradient(circle at 18% 80%, rgba(255,61,61,.10), transparent 22%);
+        radial-gradient(circle at 80% 22%, rgba(216,107,31,.11), transparent 20%),
+        radial-gradient(circle at 16% 84%, rgba(180,67,42,.08), transparent 22%);
       pointer-events: none;
     }
     .hero-main,
@@ -136,48 +166,45 @@
       z-index: 1;
     }
     .hero-side {
-      padding-left: 10px;
-      border-left: 1px solid rgba(255,255,255,.06);
+      padding-left: 18px;
+      border-left: 1px solid rgba(96,63,41,.08);
     }
 
-    .hero-copy,
-    .hero-card,
-    .info-card,
-    .social-card,
-    .story-card,
-    .menu-card,
-    .map-card,
-    .cta-box,
-    .reviews-section { border-radius: var(--radius); }
-
-    .hero-copy { padding: 34px; }
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       padding: 10px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-      color: #ffd9b3;
+      border: 1px solid rgba(96,63,41,.08);
+      background: rgba(255,255,255,0.58);
+      color: #8a5a35;
       font-size: 0.84rem;
       font-weight: 700;
       letter-spacing: .06em;
       text-transform: uppercase;
     }
+
     .hero h1 {
       margin: 18px 0 16px;
-      font-size: clamp(3rem, 7vw, 5.8rem);
-      line-height: .95;
+      font-size: clamp(3.1rem, 6vw, 5.5rem);
+      line-height: .94;
       letter-spacing: -0.07em;
+      color: var(--text);
     }
     .hero h1 span {
-      background: linear-gradient(135deg, #fff, #ffd9b3 28%, #ffb347 60%, #ff5b2e 100%);
+      background: linear-gradient(135deg, #7b3b1f, #d86b1f 45%, #efb36b 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .lead { color: var(--muted); font-size: 1.08rem; line-height: 1.8; }
+    .lead {
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.85;
+      max-width: 760px;
+      margin: 0;
+    }
 
     .stats, .feature-list, .actions, .cta-actions {
       display: flex;
@@ -190,9 +217,9 @@
     .pill {
       padding: 12px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-      color: #eef2ff;
+      border: 1px solid rgba(96,63,41,0.08);
+      background: rgba(255,255,255,0.58);
+      color: #3a2c23;
       font-size: .92rem;
       font-weight: 600;
       transition: var(--transition);
@@ -213,13 +240,13 @@
     }
     .btn:hover { transform: translateY(-3px); }
     .btn-primary {
-      color: #0f1014;
-      background: linear-gradient(135deg, var(--orange-2), var(--orange), #ff5b2e);
-      box-shadow: 0 16px 34px rgba(255,122,24,0.28);
+      color: #fff7f0;
+      background: linear-gradient(135deg, #d8893d, var(--orange), #b74d28);
+      box-shadow: 0 16px 34px rgba(216,107,31,0.22);
     }
     .btn-secondary {
-      border-color: rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
+      border-color: rgba(96,63,41,0.10);
+      background: rgba(255,255,255,0.62);
       color: var(--text);
     }
     .btn-reserva {
@@ -241,32 +268,30 @@
       animation: shine 3.2s infinite;
     }
     .btn-whatsapp {
-      border-color: rgba(37, 211, 102, 0.35);
-      background: rgba(37,211,102,0.12);
-      color: #c9ffd9;
+      border-color: rgba(37, 211, 102, 0.30);
+      background: rgba(37,211,102,0.14);
+      color: #13733a;
     }
 
-    .hero-card { padding: 22px; }
-    .hero-card-inner {
-      border-radius: 22px;
-      padding: 26px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-    }
     .card-kicker {
-      color: #ffd9b3;
+      color: #8a5a35;
       font-size: .78rem;
       text-transform: uppercase;
       letter-spacing: .16em;
       font-weight: 800;
     }
-    .hero-card h2 {
-      margin: 14px 0 12px;
-      font-size: clamp(1.7rem, 3.2vw, 2.45rem);
-      line-height: 1.08;
+    .hero-side h2 {
+      margin: 12px 0 12px;
+      font-size: clamp(1.8rem,3vw,2.9rem);
+      line-height: 1.05;
       letter-spacing: -0.05em;
+      color: var(--text);
     }
-    .hero-card p, .story-card p, .menu-card p, .map-card p, .reviews-intro { color: var(--muted); line-height: 1.75; }
+    .hero-side p,
+    .story-card p,
+    .menu-card p,
+    .map-card p,
+    .reviews-intro { color: var(--muted); line-height: 1.78; }
 
     .menu-grid {
       display: grid;
@@ -277,9 +302,9 @@
     .menu-item {
       padding: 16px;
       border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.03);
-      color: #edf1f9;
+      border: 1px solid rgba(96,63,41,0.08);
+      background: rgba(255,255,255,0.60);
+      color: #2f221b;
       font-weight: 600;
       transition: var(--transition);
     }
@@ -288,9 +313,9 @@
       margin-top: 18px;
       padding: 16px 18px;
       border-radius: 18px;
-      border: 1px solid rgba(255,179,71,0.22);
-      background: linear-gradient(135deg, rgba(255,179,71,0.12), rgba(255,122,24,0.08));
-      color: #ffe8c7;
+      border: 1px solid rgba(216,107,31,0.18);
+      background: linear-gradient(135deg, rgba(239,179,107,0.18), rgba(216,107,31,0.09));
+      color: #774521;
       line-height: 1.6;
     }
 
@@ -298,38 +323,66 @@
     .cards-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+      gap: 16px;
     }
     .info-card, .social-card, .story-card, .menu-card, .map-card {
-      padding: 28px;
-      border: 1px solid rgba(255,122,24,0.35);
-      box-shadow: 0 0 0 1px rgba(255,122,24,0.15), 0 18px 60px rgba(0,0,0,0.45);
-      background: var(--panel);
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(216,107,31,0.16);
+      box-shadow: 0 0 0 1px rgba(216,107,31,0.06), 0 18px 60px rgba(80,45,24,0.10);
+      background: linear-gradient(135deg, rgba(255,251,247,.98), rgba(248,239,229,.95));
     }
-    .card-title { margin: 0 0 18px; font-size: 1.5rem; letter-spacing: -0.04em; }
+    .card-title {
+      margin: 0 0 18px;
+      font-size: 1.5rem;
+      letter-spacing: -0.04em;
+      color: var(--text);
+    }
 
     .detail-list { display: grid; gap: 14px; }
     .detail-item {
       padding-bottom: 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(96,63,41,0.08);
       color: var(--muted);
       line-height: 1.7;
     }
     .detail-item:last-child { border-bottom: none; padding-bottom: 0; }
     .detail-item strong { display: block; margin-bottom: 4px; color: var(--text); font-size: .95rem; }
 
-    .social-links { display: grid; gap: 12px; }
+    .social-links {
+      display: grid;
+      gap: 10px;
+    }
+
     .social-link {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.03);
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 16px;
       transition: var(--transition);
       font-weight: 700;
+    }
+
+    .social-link.instagram {
+      background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf);
+      color: #fff;
+    }
+
+    .social-link.facebook {
+      background: linear-gradient(135deg, #1877f2, #3b5998);
+      color: #fff;
+    }
+
+    .social-link.linktree {
+      background: #000;
+      color: #fff;
+    }
+
+    .social-link span:last-child {
+      font-size: .85rem;
+      opacity: 0.9;
     }
     .social-link span:last-child { color: var(--muted); font-weight: 600; font-size: .92rem; }
     .social-link:hover { transform: translateY(-3px); }
@@ -338,8 +391,8 @@
       margin-top: 22px;
       padding: 20px;
       border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(96,63,41,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.54), rgba(255,249,242,0.42));
     }
     .delivery-head {
       display: flex;
@@ -350,6 +403,7 @@
     .delivery-head strong {
       font-size: 1rem;
       letter-spacing: -0.02em;
+      color: var(--text);
     }
     .delivery-head span {
       color: var(--muted);
@@ -357,33 +411,31 @@
     }
     .delivery-links {
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
     .delivery-link {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 16px;
+      gap: 12px;
+      padding: 13px;
       border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(96,63,41,0.08);
+      background: rgba(255,255,255,0.56);
       transition: var(--transition);
     }
     .delivery-link:hover {
       transform: translateY(-3px);
-      border-color: rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.05);
+      border-color: rgba(96,63,41,0.16);
+      background: rgba(255,255,255,0.72);
     }
     .delivery-logo {
-      width: 46px;
-      height: 46px;
+      width: 40px;
+      height: 40px;
       border-radius: 14px;
       display: grid;
       place-items: center;
-      font-weight: 900;
-      font-size: .95rem;
       flex: 0 0 46px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
     }
     .delivery-text {
       display: flex;
@@ -394,22 +446,11 @@
     .delivery-text strong {
       font-size: .98rem;
       letter-spacing: -0.02em;
+      color: var(--text);
     }
     .delivery-text small {
       color: var(--muted);
       font-size: .85rem;
-    }
-    .delivery-link.glovo .delivery-logo {
-      background: linear-gradient(135deg, #ffd400, #f7c700);
-      color: #181818;
-    }
-    .delivery-link.justeat .delivery-logo {
-      background: linear-gradient(135deg, #ff6b35, #ff4f19);
-      color: #fff;
-    }
-    .delivery-link.uber .delivery-logo {
-      background: linear-gradient(135deg, #111, #222);
-      color: #fff;
     }
 
     .two-col {
@@ -418,19 +459,26 @@
       gap: 24px;
     }
 
+    .map-card {
+      background: linear-gradient(135deg, rgba(255,250,245,.98), rgba(248,239,229,.96));
+    }
     .map-card iframe {
       width: 100%;
       height: 320px;
       border: 0;
       border-radius: 18px;
       margin-top: 18px;
-      filter: grayscale(1) invert(.95) contrast(1.1);
-      opacity: .9;
+      filter: grayscale(.15) contrast(1.02);
+      opacity: .98;
     }
 
-    .reviews-wrap {
-      padding: 30px;
+    .reviews-section {
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255,250,245,.98), rgba(248,239,229,.96));
+      border: 1px solid rgba(216,107,31,0.16);
+      box-shadow: 0 18px 60px rgba(80,45,24,0.10);
     }
+    .reviews-wrap { padding: 30px; }
     .reviews-header {
       display: flex;
       align-items: end;
@@ -445,9 +493,9 @@
       align-items: center;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #ffd9b3;
+      background: rgba(255,255,255,0.58);
+      border: 1px solid rgba(96,63,41,0.08);
+      color: #8a5a35;
       font-weight: 700;
       font-size: .9rem;
     }
@@ -463,64 +511,76 @@
       font-weight: 800;
       font-size: .9rem;
       border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: 0 10px 25px rgba(255,122,24,0.25);
+      box-shadow: 0 10px 25px rgba(255,122,24,0.18);
       transition: var(--transition);
     }
     .review-action:hover {
       transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 16px 35px rgba(255,122,24,0.35);
+      box-shadow: 0 16px 35px rgba(255,122,24,0.25);
     }
     .reviews-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
     }
     .review-card {
-      padding: 22px;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(96,63,41,0.08);
+      background: rgba(255,255,255,0.62);
       transition: var(--transition);
     }
     .review-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(255,179,71,0.28);
-      background: rgba(255,255,255,0.05);
+      border-color: rgba(216,107,31,0.24);
+      background: rgba(255,255,255,0.74);
     }
     .review-top {
       display: flex;
       align-items: start;
       justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 12px;
+      gap: 12px;
+      margin-bottom: 10px;
     }
     .review-name {
       margin: 0;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 800;
+      color: var(--text);
+      line-height: 1.25;
     }
     .review-meta {
       color: var(--muted);
-      font-size: .92rem;
-      line-height: 1.6;
+      font-size: .85rem;
+      line-height: 1.5;
     }
     .review-price {
       white-space: nowrap;
-      padding: 8px 12px;
+      padding: 7px 10px;
       border-radius: 999px;
-      background: rgba(255,122,24,0.12);
-      border: 1px solid rgba(255,122,24,0.22);
-      color: #ffd9b3;
+      background: rgba(216,107,31,0.10);
+      border: 1px solid rgba(216,107,31,0.18);
+      color: #8a5a35;
       font-weight: 700;
-      font-size: .85rem;
+      font-size: .8rem;
     }
-    .stars { letter-spacing: .14em; color: #ffca57; font-size: 1rem; margin: 12px 0 10px; }
-    .review-card p { margin: 0 0 12px; color: #eaeef8; line-height: 1.75; }
+    .stars {
+      letter-spacing: .12em;
+      color: #d98b1f;
+      font-size: .95rem;
+      margin: 8px 0 8px;
+    }
+    .review-card p {
+      margin: 0 0 10px;
+      color: #2d221d;
+      line-height: 1.65;
+      font-size: .95rem;
+    }
     .review-scores {
       color: var(--muted);
-      font-size: .94rem;
-      line-height: 1.7;
-      margin-bottom: 12px;
+      font-size: .88rem;
+      line-height: 1.55;
+      margin-bottom: 10px;
     }
     .review-tags {
       display: flex;
@@ -529,12 +589,12 @@
       margin-top: 10px;
     }
     .tag {
-      padding: 8px 10px;
+      padding: 7px 9px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #e8edf9;
-      font-size: .82rem;
+      background: rgba(255,255,255,0.60);
+      border: 1px solid rgba(96,63,41,0.08);
+      color: #4a382f;
+      font-size: .78rem;
       font-weight: 600;
     }
 
@@ -545,9 +605,12 @@
       grid-template-columns: 1fr auto;
       align-items: center;
       gap: 24px;
-      background: linear-gradient(135deg, rgba(255,122,24,0.16), rgba(255,61,61,0.12), rgba(255,179,71,0.10));
+      border-radius: var(--radius);
+      border: 1px solid rgba(216,107,31,0.16);
+      background: linear-gradient(135deg, rgba(255,247,240,0.98), rgba(245,232,219,0.94));
+      box-shadow: 0 20px 64px rgba(80,45,24,0.11);
     }
-    .cta-box h3 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -0.05em; }
+    .cta-box h3 { margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -0.05em; color: var(--text); }
     .cta-box p { margin: 0; color: var(--muted); line-height: 1.75; max-width: 760px; }
 
     .footer { padding: 0 0 38px; }
@@ -557,7 +620,7 @@
       justify-content: space-between;
       gap: 12px;
       padding-top: 18px;
-      color: #98a2b3;
+      color: #7c6a60;
       font-size: 0.92rem;
     }
 
@@ -572,9 +635,7 @@
       display: grid;
       place-items: center;
       color: #fff;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
-      font-size: 1rem;
-      font-weight: 900;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
       transition: transform var(--transition), box-shadow var(--transition);
       border: 1px solid rgba(255,255,255,0.22);
     }
@@ -583,7 +644,7 @@
     .floating-whatsapp {
       bottom: 22px;
       background: linear-gradient(135deg, #4af38a, var(--green));
-      box-shadow: 0 18px 40px rgba(37,211,102,0.34);
+      box-shadow: 0 18px 40px rgba(37,211,102,0.26);
       color: #0f1b12;
     }
     .floating-social.instagram {
@@ -600,7 +661,7 @@
       bottom: 254px;
       background: linear-gradient(135deg, #ffd27a, #ffb347, #ff7a18);
       color: #1b110a;
-      box-shadow: 0 18px 40px rgba(255,122,24,0.30);
+      box-shadow: 0 18px 40px rgba(255,122,24,0.24);
     }
     .floating-social.reserva::before {
       content: "";
@@ -617,13 +678,13 @@
       white-space: nowrap;
       padding: 9px 12px;
       border-radius: 999px;
-      background: rgba(20,20,26,.92);
+      background: rgba(38,26,20,.92);
       border: 1px solid rgba(255,179,71,.24);
       color: #ffe3bf;
       font-size: .84rem;
       font-weight: 800;
       letter-spacing: -.01em;
-      box-shadow: 0 12px 28px rgba(0,0,0,.25);
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
     }
 
     .fade-up {
@@ -645,32 +706,79 @@
     }
 
     @media (max-width: 1080px) {
-      .hero-unified { grid-template-columns: 1fr; }
-      .hero-side { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,.06); padding-top: 22px; }
       .delivery-links[style] { grid-template-columns: 1fr !important; }
-      .hero-wrap, .cards-3, .two-col, .cta-box, .reviews-grid { grid-template-columns: 1fr; }
+      .hero-unified {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+      .hero-side {
+        border-left: 0;
+        padding-left: 0;
+        border-top: 1px solid rgba(96,63,41,.08);
+        padding-top: 22px;
+      }
+      .cards-3,
+      .two-col,
+      .cta-box,
+      .reviews-grid,
+      .hero-wrap {
+        grid-template-columns: 1fr;
+      }
+      .menu-card > div[style*="grid-template-columns:repeat(3,minmax(0,1fr))"] {
+        grid-template-columns: 1fr !important;
+      }
     }
 
     @media (max-width: 760px) {
-      .container { width: min(var(--max), calc(100% - 20px)); }
-      .topbar-inner { border-radius: 24px; align-items: flex-start; flex-direction: column; }
-      .nav { width: 100%; justify-content: flex-start; }
-      .hero-copy, .hero-card, .info-card, .social-card, .story-card, .menu-card, .map-card, .cta-box, .reviews-wrap, .hero-unified { padding: 22px; }
-      .hero h1 { font-size: clamp(2.5rem, 12vw, 4rem); }
+      .container { width: min(var(--max), calc(100% - 18px)); }
+      .topbar { top: 10px; }
+      .topbar-inner {
+        border-radius: 20px;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px;
+      }
+      .nav {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 8px;
+      }
+      .nav a {
+        padding: 9px 12px;
+        font-size: .9rem;
+      }
+      .info-card,
+      .social-card,
+      .story-card,
+      .menu-card,
+      .map-card,
+      .cta-box,
+      .reviews-wrap,
+      .hero-unified {
+        padding: 20px;
+      }
+      .hero h1 { font-size: clamp(2.55rem, 12vw, 4rem); }
+      .lead { font-size: 1rem; line-height: 1.75; }
       .menu-grid { grid-template-columns: 1fr; }
-      .actions, .cta-actions { flex-direction: column; }
+      .actions,
+      .cta-actions,
+      .stats,
+      .feature-list {
+        flex-direction: column;
+        align-items: stretch;
+      }
       .btn { width: 100%; }
-      .floating-social, .floating-whatsapp { width: 58px; height: 58px; right: 14px; font-size: .9rem; }
-      .floating-social.reserva { bottom: 216px; }
+      .floating-social,
+      .floating-whatsapp {
+        width: 56px;
+        height: 56px;
+        right: 12px;
+      }
+      .floating-social.reserva { bottom: 210px; }
       .floating-social.reserva::after { display: none; }
-      .floating-social.instagram { bottom: 150px; }
-      .floating-social.facebook { bottom: 84px; }
-      .floating-whatsapp { bottom: 18px; }
-    }
-  
-    @media (max-width: 1080px) {
-      .hero-card-inner > div[style*="grid-template-columns: 1.1fr .9fr"],
-      .menu-card > div[style*="grid-template-columns:repeat(3,minmax(0,1fr))"] { grid-template-columns: 1fr !important; }
+      .floating-social.instagram { bottom: 144px; }
+      .floating-social.facebook { bottom: 78px; }
+      .floating-whatsapp { bottom: 12px; }
     }
   </style>
 </head>
@@ -689,26 +797,12 @@
             </div>
           </div>
           <nav class="nav">
-            <a href="#inicio" class="active">Inicio</a>
-            <a href="#informacion">Información</a>
-            <a href="#menu">Especialidades</a>
-            <a href="#platos">Platos</a>
-            <a href="#contacto">Contacto</a>
-            <a href="#reservas">Reservas</a>
-            <a href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer" class="active">Reservar</a>
-          </nav>
-        </div>
-      </div>
-            <div class="brand-text">
-              <strong>Crazy Wings BCN</strong>
-              <span>Street Food Colombiano en Barcelona</span>
-            </div>
-          </div>
-          <nav class="nav">
-            <a href="#inicio">Inicio</a>
-            <a href="#informacion">Información</a>
-            <a href="#menu">Especialidades</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#inicio">🏠 Inicio</a>
+            <a href="#informacion">📋 Información</a>
+            <a href="#ubicacion">📍 Ubicación</a>
+            <a href="#delivery">🛵 A domicilio</a>
+            <a href="https://www.google.com/search?q=craazy+wings&oq=craazy+wings&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTISCAEQLhgNGK8BGMcBGIAEGI4FMgkIAhAAGA0YgAQyDwgDEC4YDRivARjHARiABDIPCAQQLhgNGK8BGMcBGIAEMgkIBRAAGA0YgAQyCQgGEAAYDRiABDIJCAcQABgNGIAEMgkICBAAGA0YgATSAQgyOTI3ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lpg=" target="_blank" rel="noopener noreferrer">📸 Nuestros platos</a>
+            <a href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer" class="nav-reserve">🍽️ Reservar mesa</a>
           </nav>
         </div>
       </div>
@@ -718,9 +812,7 @@
           <div class="hero-main">
             <div class="eyebrow">Sabor, locura y buena vibra</div>
             <h1>Crazy Wings <span>BCN</span></h1>
-          <p class="lead">
-              Restaurante de comida rápida colombiana con mucha personalidad, estética inspirada en cómics de vieja guardia y alma de food truck. Un sitio pensado para venir con ganas de disfrutar, comer muy bien y quedarse con ganas de volver.
-            </p>
+            <p class="lead">Restaurante de comida rápida colombiana con mucha personalidad, estética inspirada en cómics de vieja guardia y alma de food truck. Un sitio pensado para venir con ganas de disfrutar, comer muy bien y quedarse con ganas de volver.</p>
             <div class="stats">
               <div class="pill">Terraza</div>
               <div class="pill">Platos veganos</div>
@@ -728,22 +820,30 @@
               <div class="pill">Precio medio: 10–20 €</div>
             </div>
             <div class="actions">
-              <a class="btn btn-primary" href="https://drive.google.com/file/d/1iLZQvjmu5ORGtHCh0nDIccwX65xw_f1y/view" target="_blank" rel="noopener noreferrer">Ver menú</a>
-              <a class="btn btn-reserva" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">🍽️ Reservar mesa</a>
-              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=C%2F+de+Padilla%2C+386%2C+Horta-Guinard%C3%B3%2C+08026+Barcelona" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
-              <a class="btn btn-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+              <a class="btn btn-primary" href="https://drive.google.com/file/d/1iLZQvjmu5ORGtHCh0nDIccwX65xw_f1y/view" target="_blank" rel="noopener noreferrer">📖 Ver menú</a>
+              <a class="btn btn-secondary" href="#ubicacion">📍 Ubicación</a>
+              <a class="btn btn-secondary" href="#delivery">🛵 A domicilio</a>
+              <a class="btn btn-secondary" href="https://www.google.com/search?q=craazy+wings&oq=craazy+wings&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTISCAEQLhgNGK8BGMcBGIAEGI4FMgkIAhAAGA0YgAQyDwgDEC4YDRivARjHARiABDIPCAQQLhgNGK8BGMcBGIAEMgkIBRAAGA0YgAQyCQgGEAAYDRiABDIJCAcQABgNGIAEMgkICBAAGA0YgATSAQgyOTI3ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#lpg=" target="_blank" rel="noopener noreferrer">📸 Ver platos</a>
+              <a class="btn btn-primary" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">🍽️ Reservar mesa</a>
+              <a class="btn btn-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">💬 Pedir por WhatsApp</a>
             </div>
           </div>
 
           <div class="hero-side" id="menu">
-            <div style="display:flex; justify-content:center; margin-bottom:18px;">
-              <img src="logo-crazy-wings.png" alt="Logo Crazy Wings BCN" style="width:300px; max-width:100%; filter: drop-shadow(0 24px 44px rgba(255,122,24,.28));">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px;">
+              <div style="border-radius:20px; overflow:hidden; min-height:180px; box-shadow:0 18px 40px rgba(109,69,40,.10);">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80" alt="Hamburguesa gourmet" style="width:100%; height:180px; object-fit:cover; display:block;">
+              </div>
+              <div style="border-radius:20px; overflow:hidden; min-height:180px; box-shadow:0 18px 40px rgba(109,69,40,.10);">
+                <img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=1200&q=80" alt="Alitas de pollo" style="width:100%; height:180px; object-fit:cover; display:block;">
+              </div>
             </div>
-            
-            <h2 style="margin:12px 0 12px; font-size:clamp(1.8rem,3vw,2.9rem); line-height:1.05; letter-spacing:-0.05em;">Street Food colombiano con presencia, carácter y un sabor que no pasa desapercibido.</h2>
-            <p style="margin:0; color:var(--muted); line-height:1.75;">
-              Especializados en alitas con salsas únicas, hot dogs, burgers, tequeños, arepas y más. Una propuesta pensada para foodies, amantes del picante, grupos de amigos y clientes que buscan comer rico en un sitio con rollo propio.
-            </p>
+            <div style="display:flex; justify-content:center; margin-bottom:18px;">
+              <img src="logo-crazy-wings.png" alt="Logo Crazy Wings BCN" style="width:320px; max-width:100%; filter: drop-shadow(0 24px 44px rgba(216,107,31,.22));">
+            </div>
+            <div class="card-kicker">Especialidades</div>
+            <h2>Street Food colombiano con presencia, carácter y un sabor que no pasa desapercibido.</h2>
+            <p>Especializados en alitas con salsas únicas, hot dogs, burgers, tequeños, arepas y más. Una propuesta pensada para foodies, amantes del picante, grupos de amigos y clientes que buscan comer rico en un sitio con rollo propio.</p>
             <div class="menu-grid">
               <div class="menu-item">Alitas con salsas únicas</div>
               <div class="menu-item">Hot Dogs</div>
@@ -763,74 +863,27 @@
 
   <main>
     <section class="section" id="informacion">
-      <div class="container cards-3">
+      <div class="container two-col">
         <article class="info-card glass fade-up">
           <h3 class="card-title">Información del local</h3>
           <div class="detail-list">
             <div class="detail-item"><strong>Dirección</strong>C/ de Padilla, 386, Horta-Guinardó, 08026 Barcelona</div>
             <div class="detail-item"><strong>Teléfono</strong><a href="tel:604822328">604 82 23 28</a></div>
             <div class="detail-item"><strong>Correo electrónico</strong><a href="mailto:crazywingsbcn@hotmail.com">crazywingsbcn@hotmail.com</a></div>
-            <div class="detail-item"><strong>Horario</strong>Abierto · Cierre: 0:00<br>Cocina abierta · Cierre: 23:30</div>
+            <div class="detail-item"><strong>Horario</strong>
+            Sábado: 13:00–24:00<br>
+            Domingo: 13:00–24:00<br>
+            Lunes: 18:00–24:00<br>
+            Martes: Cerrado<br>
+            Miércoles: Cerrado<br>
+            Jueves: 18:00–24:00<br>
+            Viernes: 18:00–24:00
+            </div>
             <div class="detail-item"><strong>Precio orientativo</strong>10–20 € por persona</div>
           </div>
         </article>
 
-        <article class="social-card glass fade-up delay-1" id="contacto">
-          <h3 class="card-title">Redes y enlaces</h3>
-          <div class="social-links">
-            <a class="social-link" href="https://www.instagram.com/crazywingsbcn/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span>@crazywingsbcn</span></a>
-            <a class="social-link" href="https://www.facebook.com/CRAZYWINGSBCN" target="_blank" rel="noopener noreferrer"><span>Facebook</span><span>Crazy Wings BCN</span></a>
-            <a class="social-link" href="https://linktr.ee/Crazywingsbcn" target="_blank" rel="noopener noreferrer"><span>Linktree</span><span>Menú y accesos</span></a>
-            <a class="social-link" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><span>Contacto directo</span></a>
-          </div>
-
-          <div class="delivery-panel">
-            <div class="delivery-head">
-              <strong>Opción a domicilio</strong>
-              <span>Pide online en tus plataformas favoritas</span>
-            </div>
-            <div class="delivery-links">
-              <a class="delivery-link glovo" href="https://glovoapp.com/es/es/barcelona/stores/crazy-wings-bcn-bcn?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener noreferrer">
-                <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/glovo-1.svg" alt="Glovo" style="width:100%;height:100%;object-fit:contain;"></span>
-                <span class="delivery-text"><strong>Glovo</strong><small>Entrega a domicilio</small></span>
-              </a>
-              <a class="delivery-link justeat" href="https://www.just-eat.es/restaurants-crazy-wings-and--bcn-barcelona/menu?serviceType=collection&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener noreferrer">
-                <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/just-eat.svg" alt="Just Eat" style="width:100%;height:100%;object-fit:contain;"></span>
-                <span class="delivery-text"><strong>Just Eat</strong><small>Pedido online</small></span>
-              </a>
-              <a class="delivery-link uber" href="https://www.ubereats.com/es/store/crazy-wings-%26-%2B-bcn/NdfNtVPbWs2m6wFVDTRvkw?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer">
-                <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/uber-eats.svg" alt="Uber Eats" style="width:100%;height:100%;object-fit:contain;"></span>
-                <span class="delivery-text"><strong>Uber Eats</strong><small>Recogida / pedido online</small></span>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="story-card glass fade-up delay-2">
-          <h3 class="card-title">La experiencia Crazy Wings</h3>
-          <p>
-            Crazy Wings BCN es un restaurante de street food colombiano especializado en alitas con salsas únicas, hamburguesas, hot dogs, tequeños y arepas. Un espacio pensado para disfrutar de sabores intensos, combinaciones originales y una experiencia gastronómica diferente en Barcelona.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container two-col">
-        <article class="menu-card glass fade-up">
-          <h3 class="card-title">Qué hace diferente a Crazy Wings BCN</h3>
-          <p>
-            La combinación de alitas con salsas únicas, comida rápida colombiana, una presentación cuidada y una identidad visual potente convierten este local en una referencia para quienes buscan una experiencia diferente en Barcelona.
-          </p>
-          <div class="feature-list">
-            <div class="pill">Marca memorable</div>
-            <div class="pill">Comida rápida con identidad</div>
-            <div class="pill">Concepto visual diferencial</div>
-            <div class="pill">Fidelización Crazy Fans</div>
-          </div>
-        </article>
-
-        <article class="map-card glass fade-up delay-1">
+        <article class="map-card glass fade-up delay-1" id="ubicacion">
           <h3 class="card-title">Ubicación</h3>
           <p>Encuéntranos en C/ de Padilla, 386, Horta-Guinardó, 08026 Barcelona. Accede fácilmente a la ubicación del local y obtén indicaciones en tiempo real desde tu dispositivo.</p>
           <iframe src="https://www.google.com/maps?q=Crazy%20Wings%20BCN%20C%2F%20de%20Padilla%20386%20Barcelona&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Crazy Wings BCN"></iframe>
@@ -841,14 +894,67 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="container cards-3">
+        <article class="social-card glass fade-up delay-1" id="contacto">
+          <h3 class="card-title">Redes sociales</h3>
+          <div class="social-links">
+  <a class="social-link instagram" href="https://www.instagram.com/crazywingsbcn/" target="_blank" rel="noopener noreferrer">
+    <span style="display:flex;align-items:center;gap:10px;">
+      <img src="https://cdn.worldvectorlogo.com/logos/instagram-2016-5.svg" alt="Instagram" style="width:20px;height:20px;">
+      <strong>Instagram</strong>
+    </span>
+    <span>@crazywingsbcn</span>
+  </a>
+  <a class="social-link facebook" href="https://www.facebook.com/CRAZYWINGSBCN" target="_blank" rel="noopener noreferrer">
+    <span style="display:flex;align-items:center;gap:10px;">
+      <img src="https://cdn.worldvectorlogo.com/logos/facebook-3-2.svg" alt="Facebook" style="width:20px;height:20px;">
+      <strong>Facebook</strong>
+    </span>
+    <span>Crazy Wings BCN</span>
+  </a>
+  <a class="social-link linktree" href="https://linktr.ee/Crazywingsbcn" target="_blank" rel="noopener noreferrer" style="background:#39e09b; color:#0f172a;">
+    <span style="display:flex;align-items:center;gap:10px;">
+      <img src="https://cdn.worldvectorlogo.com/logos/linktree-2.svg" alt="Linktree" style="width:20px;height:20px;">
+      <strong>Linktree</strong>
+    </span>
+    <span>Menú y accesos</span>
+  </a>
+</div>
+        </article>
+
+        <article class="menu-card glass fade-up" id="delivery">
+          <h3 class="card-title">🛵 Pedido a domicilio</h3>
+          <p>Realiza tu pedido desde nuestras plataformas de reparto disponibles en Barcelona.</p>
+          <div class="delivery-links" style="margin-top:18px; display:grid; grid-template-columns:1fr; gap:10px;">
+            <a class="delivery-link glovo" href="https://glovoapp.com/es/es/barcelona/stores/crazy-wings-bcn-bcn?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener noreferrer">
+              <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/glovo-1.svg" style="width:100%;height:100%;object-fit:contain;"></span>
+              <span class="delivery-text"><strong>Glovo</strong><small>Entrega a domicilio</small></span>
+            </a>
+            <a class="delivery-link justeat" href="https://www.just-eat.es/restaurants-crazy-wings-and--bcn-barcelona/menu?serviceType=collection&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener noreferrer">
+              <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/just-eat.svg" style="width:100%;height:100%;object-fit:contain;"></span>
+              <span class="delivery-text"><strong>Just Eat</strong><small>Pedido online</small></span>
+            </a>
+            <a class="delivery-link uber" href="https://www.ubereats.com/es/store/crazy-wings-%26-%2B-bcn/NdfNtVPbWs2m6wFVDTRvkw?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer">
+              <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/uber-eats.svg" style="width:100%;height:100%;object-fit:contain;"></span>
+              <span class="delivery-text"><strong>Uber Eats</strong><small>Recogida / pedido online</small></span>
+            </a>
+          </div>
+        </article>
+
+        <article class="story-card glass fade-up delay-2">
+          <h3 class="card-title">La experiencia Crazy Wings</h3>
+          <p>Crazy Wings BCN es un restaurante de street food colombiano especializado en alitas con salsas únicas, hamburguesas, hot dogs, tequeños y arepas. Un espacio pensado para disfrutar de sabores intensos, combinaciones originales y una experiencia gastronómica diferente en Barcelona.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="reservas">
       <div class="container">
-        <div class="cta-box glass fade-up" style="margin-bottom:24px; border:1px solid rgba(255,179,71,0.18); background:linear-gradient(135deg, rgba(255,179,71,0.14), rgba(255,122,24,0.10), rgba(255,255,255,0.03));">
+        <div class="cta-box glass fade-up" style="margin-bottom:24px;">
           <div>
             <h3>Reserva tu mesa de forma rápida y profesional</h3>
-            <p>
-              El restaurante dispone de un sistema de reservas integrado con Google, que permite seleccionar fecha, hora y disponibilidad en tiempo real de forma rápida y sencilla.
-            </p>
+            <p>El restaurante dispone de un sistema de reservas integrado con Google, que permite seleccionar fecha, hora y disponibilidad en tiempo real de forma rápida y sencilla.</p>
           </div>
           <div class="cta-actions">
             <a class="btn btn-reserva" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">🍽️ Reservar ahora</a>
@@ -874,18 +980,16 @@
               <div class="pill">Sistema profesional</div>
               <div class="pill">Consulta por WhatsApp</div>
             </div>
-            <p style="margin-top:18px; color:var(--muted); line-height:1.75;"></p>
-            
-              <div class="detail-item"><strong>Menos fricción</strong>Proceso ágil y sencillo que facilita completar la reserva en pocos pasos.</div>
-              <div class="detail-item"><strong>Mejor conversión</strong>Integración optimizada que facilita la reserva desde distintos puntos de la web de forma intuitiva.</div>
+            <p style="margin-top:18px; color:var(--muted); line-height:1.75;">Una forma cómoda y rápida de reservar mesa antes de visitar el restaurante.</p>
+            <div class="detail-list" style="margin-top:18px;">
+              <div class="detail-item"><strong>Acceso directo</strong>Entrada inmediata al calendario de reservas con disponibilidad actualizada.</div>
+              <div class="detail-item"><strong>Proceso ágil</strong>Selección rápida de fecha, hora y número de personas.</div>
             </div>
           </article>
 
           <article class="story-card glass fade-up delay-2">
-            <h3 class="card-title">Reserva y luego disfruta</h3>
-            <p>
-              Reserva tu mesa y disfruta de una experiencia gastronómica completa en un ambiente dinámico, ideal para compartir con amigos, pareja o familia.
-            </p>
+            <h3 class="card-title">Reserva y disfruta</h3>
+            <p>Reserva tu mesa y disfruta de una experiencia gastronómica completa en un ambiente dinámico, ideal para compartir con amigos, pareja o familia.</p>
             <div class="actions" style="margin-top:18px;">
               <a class="btn btn-reserva" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">Abrir reservas</a>
             </div>
@@ -896,31 +1000,9 @@
 
     <section class="section" id="platos">
       <div class="container">
-        <div class="menu-card glass fade-up" style="margin-bottom:24px;">
-          <h3 class="card-title">Ejemplos de platos que apetecen de verdad</h3>
-          <p>
-            Descubre algunos de los platos más representativos del menú, preparados con sabor auténtico y pensados para disfrutar desde el primer momento.
-          </p>
-          <div style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:18px;">
-            <div class="delivery-link" style="display:block; padding:18px; background:linear-gradient(180deg, rgba(255,122,24,.10), rgba(255,255,255,.02));">
-              <div style="font-size:1.8rem; margin-bottom:10px;">🍗</div>
-              <div class="delivery-text"><strong>Mix de alitas y costillas</strong><small>Potente, sabroso y perfecto para compartir.</small></div>
-            </div>
-            <div class="delivery-link" style="display:block; padding:18px; background:linear-gradient(180deg, rgba(255,61,61,.10), rgba(255,255,255,.02));">
-              <div style="font-size:1.8rem; margin-bottom:10px;">🍔</div>
-              <div class="delivery-text"><strong>Crazy Burguer</strong><small>Una burger con personalidad, ideal para quien viene con hambre.</small></div>
-            </div>
-            <div class="delivery-link" style="display:block; padding:18px; background:linear-gradient(180deg, rgba(255,179,71,.10), rgba(255,255,255,.02));">
-              <div style="font-size:1.8rem; margin-bottom:10px;">🌭</div>
-              <div class="delivery-text"><strong>Perros y tequeños</strong><small>Favoritos del público para picar, compartir y repetir.</small></div>
-            </div>
-          </div>
-        </div>
         <div class="menu-card glass fade-up">
           <h3 class="card-title">Pide a domicilio o para recoger</h3>
-          <p>
-            Crazy Wings BCN también está disponible en plataformas de delivery y pedido online. Esta sección mejora la conversión mostrando de forma clara los canales externos de compra.
-          </p>
+          <p>Crazy Wings BCN también está disponible en plataformas de delivery y pedido online, facilitando el acceso al menú desde distintas aplicaciones.</p>
           <div class="delivery-links" style="margin-top:18px; grid-template-columns: repeat(3, minmax(0, 1fr)); display:grid;">
             <a class="delivery-link glovo" href="https://glovoapp.com/es/es/barcelona/stores/crazy-wings-bcn-bcn?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener noreferrer">
               <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/glovo-1.svg" alt="Glovo" style="width:100%;height:100%;object-fit:contain;"></span>
@@ -939,21 +1021,7 @@
       </div>
     </section>
 
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-box glass fade-up delay-2">
-          <div>
-            <h3>Haz tu pedido o contacta ahora</h3>
-            <p></p>
-          </div>
-          <div class="cta-actions">
-            <a class="btn btn-reserva" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">🍽️ Reservar mesa</a>
-            <a class="btn btn-primary" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a class="btn btn-secondary" href="mailto:crazywingsbcn@hotmail.com">Correo</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <section class="section" id="resenas">
       <div class="container">
@@ -966,33 +1034,12 @@
                 <p class="reviews-intro">Opiniones reales de clientes obtenidas desde el perfil de Google Maps, reflejando la experiencia y calidad del servicio ofrecido.</p>
               </div>
               <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
-                <div class="reviews-badge">★★★★★ Valoraciones 5/5 destacadas</div>
-                <a class="review-action" href="https://www.google.com/search?sca_esv=4e0bfa84728bf4dd&sxsrf=ANbL-n4pMLPsmrIJlWJ1eNJZif9xzlmumQ:1774562317922&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaeKKLo-BZYmR_JZAchwutxG23Ojb8ilCa02_DYa9vYEbAodjWMFMr-SWa_fPYHYWumyKEJyfk0rh5dW5DQ5nWEH64kAjJt3DI9NXcK-pPpgMozQzA%3D%3D&q=Crazy+Wings+%26+%2B+Bcn+Rese%C3%B1as&sa=X&ved=2ahUKEwjRut3kx76TAxWRT6QEHWz8EvwQ0bkNegQIPRAH&biw=1920&bih=945&dpr=1" target="_blank" rel="noopener noreferrer">
-                  ⭐ Añadir reseña
-                </a>
+                <div class="reviews-badge">★★★★★ Valoraciones destacadas</div>
+                <a class="review-action" href="https://www.google.com/search?sca_esv=4e0bfa84728bf4dd&sxsrf=ANbL-n4pMLPsmrIJlWJ1eNJZif9xzlmumQ:1774562317922&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaeKKLo-BZYmR_JZAchwutxG23Ojb8ilCa02_DYa9vYEbAodjWMFMr-SWa_fPYHYWumyKEJyfk0rh5dW5DQ5nWEH64kAjJt3DI9NXcK-pPpgMozQzA%3D%3D&q=Crazy+Wings+%26+%2B+Bcn+Rese%C3%B1as&sa=X&ved=2ahUKEwjRut3kx76TAxWRT6QEHWz8EvwQ0bkNegQIPRAH&biw=1920&bih=945&dpr=1" target="_blank" rel="noopener noreferrer">⭐ Añadir reseña</a>
               </div>
             </div>
 
             <div class="reviews-grid">
-              <article class="review-card">
-                <div class="review-top">
-                  <div>
-                    <h4 class="review-name">Juan Andres Martinez Marin</h4>
-                    <div class="review-meta">3 reseñas · 1 foto · Hace 3 meses</div>
-                  </div>
-                  <div class="review-price">10–20 €</div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p>Comida súper rica, atención excelente y ambiente muy agradable, lo sigo eligiendo siempre 10/10.</p>
-                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5<br>Grupo: todos los tamaños · Espera: sin espera</div>
-                <div class="review-tags">
-                  <span class="tag">Picada Colombiana</span>
-                  <span class="tag">Mini Bandeja Paisa</span>
-                  <span class="tag">Crazy Burguer</span>
-                  <span class="tag">Mix Alitas y Costillas</span>
-                </div>
-              </article>
-
               <article class="review-card">
                 <div class="review-top">
                   <div>
@@ -1002,13 +1049,66 @@
                   <div class="review-price">20–30 €</div>
                 </div>
                 <div class="stars">★★★★★</div>
-                <p>Siempre vamos con mi hermana a este sitio y nos encanta todo. La comida es deliciosa, el servicio excelente y el sabor brutal. Lo recomiendo 100%.</p>
-                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5<br>Grupo: todos los tamaños · Espera: menos de 10 min</div>
+                <p>Siempre vamos con mi hermana a este sitio y nos encanta todo. La comida es deliciosa, el servicio excelente y el sabor brutal.</p>
+                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5</div>
                 <div class="review-tags">
-                  <span class="tag">Combo</span>
                   <span class="tag">Hamburguesa</span>
                   <span class="tag">Tequeños</span>
                   <span class="tag">Crazy Burguer</span>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div>
+                    <h4 class="review-name">Juan Andres Martinez Marin</h4>
+                    <div class="review-meta">3 reseñas · 1 foto · Hace 3 meses</div>
+                  </div>
+                  <div class="review-price">10–20 €</div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>Comida súper rica, atención excelente y ambiente muy agradable. Lo sigo eligiendo siempre.</p>
+                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5</div>
+                <div class="review-tags">
+                  <span class="tag">Picada Colombiana</span>
+                  <span class="tag">Crazy Burguer</span>
+                  <span class="tag">Mix Alitas y Costillas</span>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div>
+                    <h4 class="review-name">Mauricio Perez</h4>
+                    <div class="review-meta">Local Guide · 15 reseñas · 6 fotos · Hace 3 meses</div>
+                  </div>
+                  <div class="review-price">10–20 €</div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>Excelente atención, muy buena presentación y recomendado 100%.</p>
+                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5</div>
+                <div class="review-tags">
+                  <span class="tag">Tequeños</span>
+                  <span class="tag">Patacón Mixto</span>
+                  <span class="tag">Alitas Super Crazy</span>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div>
+                    <h4 class="review-name">Milena Paulina Espinoza</h4>
+                    <div class="review-meta">3 reseñas · 1 foto · Hace 8 meses</div>
+                  </div>
+                  <div class="review-price">10–20 €</div>
+                </div>
+                <div class="stars">★★★★★</div>
+                <p>Fuimos a cenar con mi suegra y no pudimos escoger un mejor sitio. Las chicas muy amables, la comida muy rápida y deliciosa.</p>
+                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5</div>
+                <div class="review-tags">
+                  <span class="tag">Servicio rápido</span>
+                  <span class="tag">Atención amable</span>
+                  <span class="tag">Comida deliciosa</span>
                 </div>
               </article>
 
@@ -1033,33 +1133,14 @@
               <article class="review-card">
                 <div class="review-top">
                   <div>
-                    <h4 class="review-name">Mauricio Perez</h4>
-                    <div class="review-meta">Local Guide · 15 reseñas · 6 fotos · Hace 3 meses</div>
-                  </div>
-                  <div class="review-price">10–20 €</div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p>Excelente atención, muy buena presentación, recomendado 100%. Latino apoya latino, vamos que vamos Crazy Wings.</p>
-                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5<br>Grupo: todos los tamaños · Espera: sin espera</div>
-                <div class="review-tags">
-                  <span class="tag">Tequeños</span>
-                  <span class="tag">Patacón Mixto</span>
-                  <span class="tag">Seviche de Camarón</span>
-                  <span class="tag">Alitas Super Crazy</span>
-                </div>
-              </article>
-
-              <article class="review-card">
-                <div class="review-top">
-                  <div>
                     <h4 class="review-name">Nestor Correa</h4>
                     <div class="review-meta">Local Guide · 13 reseñas · 16 fotos · Hace 6 meses</div>
                   </div>
                   <div class="review-price">30–40 €</div>
                 </div>
                 <div class="stars">★★★★★</div>
-                <p>Fuimos por alitas pero pedimos una picada para 2. Estuvo genial, deliciosa y variada. Súper recomendado. Volveremos.</p>
-                <div class="review-scores">Experiencia destacada: picada para compartir · Valoración muy positiva</div>
+                <p>Fuimos por alitas pero pedimos una picada para 2. Estuvo genial, deliciosa y variada. Súper recomendado.</p>
+                <div class="review-scores">Ideal para compartir · Muy recomendable</div>
                 <div class="review-tags">
                   <span class="tag">Picada para 2</span>
                   <span class="tag">Ideal para compartir</span>
