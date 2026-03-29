@@ -3,623 +3,647 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Crazy Wings BCN - Street Food Colombiano en Barcelona. Alitas, burgers, hot dogs, tequeños, arepas y más. Terraza, Wi‑Fi, platos veganos y contacto directo por WhatsApp." />
+  <meta name="description" content="Crazy Wings BCN - Street Food Colombiano en Barcelona. Alitas, burgers, hot dogs, tequeños, arepas y más." />
   <meta name="theme-color" content="#f4ede5" />
   <title>Crazy Wings BCN | Street Food Colombiano en Barcelona</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --bg: #f4ede5;
-      --panel: rgba(255, 251, 246, 0.94);
-      --line: rgba(96, 63, 41, 0.10);
-      --text: #231814;
-      --muted: #68554a;
-      --orange: #d86b1f;
-      --orange-2: #efb36b;
-      --red: #b4432a;
-      --green: #25d366;
-      --blue: #1877f2;
-      --shadow: 0 18px 60px rgba(80, 45, 24, 0.10);
-      --radius: 24px;
-      --max: 1220px;
-      --transition: 220ms cubic-bezier(.2,.8,.2,1);
+    :root{
+      --bg:#f4ede5;
+      --panel:rgba(255,251,246,.94);
+      --line:rgba(96,63,41,.10);
+      --text:#231814;
+      --muted:#68554a;
+      --orange:#d86b1f;
+      --orange-2:#efb36b;
+      --red:#b4432a;
+      --green:#25d366;
+      --blue:#1877f2;
+      --shadow:0 18px 60px rgba(80,45,24,.10);
+      --radius:24px;
+      --max:1220px;
+      --transition:220ms cubic-bezier(.2,.8,.2,1);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: var(--text);
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(216,107,31,0.10), transparent 24%),
-        radial-gradient(circle at top right, rgba(239,179,107,0.13), transparent 20%),
-        linear-gradient(180deg, #f8f3ed 0%, #f1e8de 50%, #e9ddd0 100%);
-      min-height: 100vh;
-      overflow-x: hidden;
+        radial-gradient(circle at top left, rgba(216,107,31,.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(239,179,107,.13), transparent 20%),
+        linear-gradient(180deg,#f8f3ed 0%,#f1e8de 50%,#e9ddd0 100%);
+      min-height:100vh;
+      overflow-x:hidden;
     }
 
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
-    .glass {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: var(--shadow);
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .glass{
+      background:var(--panel);
+      border:1px solid var(--line);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      box-shadow:var(--shadow);
     }
 
-    .hero { padding: 20px 0 42px; }
-    .topbar { position: sticky; top: 12px; z-index: 30; margin-bottom: 20px; }
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px 18px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.84), rgba(255,247,239,0.82));
-      box-shadow: 0 18px 40px rgba(80,45,24,0.08);
+    .hero{padding:20px 0 42px}
+    .topbar{position:sticky;top:12px;z-index:30;margin-bottom:20px}
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 18px;
+      border-radius:22px;
+      background:linear-gradient(135deg,rgba(255,255,255,.84),rgba(255,247,239,.82));
+      box-shadow:0 18px 40px rgba(80,45,24,.08);
     }
 
-    .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
-    .brand-mark {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      overflow: hidden;
-      flex: 0 0 52px;
-      background: linear-gradient(135deg, rgba(255,122,24,.16), rgba(255,61,61,.12));
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: 0 12px 30px rgba(216,107,31,0.18);
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+    .brand-mark{
+      width:52px;height:52px;border-radius:16px;overflow:hidden;flex:0 0 52px;
+      background:linear-gradient(135deg,rgba(255,122,24,.16),rgba(255,61,61,.12));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 12px 30px rgba(216,107,31,.18);
     }
-    .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
-    .brand-text strong { display: block; font-size: 0.98rem; color: var(--text); }
-    .brand-text span { display: block; color: var(--muted); font-size: 0.84rem; }
+    .brand-mark img{width:100%;height:100%;object-fit:cover}
+    .brand-text strong{display:block;font-size:.98rem;color:var(--text)}
+    .brand-text span{display:block;color:var(--muted);font-size:.84rem}
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 10px;
-      flex-wrap: wrap;
-      max-width: 100%;
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:10px;
+      flex-wrap:wrap;
+      max-width:100%;
     }
-    .nav a {
-      color: #3a2a22;
-      padding: 10px 16px;
-      border-radius: 999px;
-      transition: var(--transition);
-      font-size: 0.92rem;
-      font-weight: 700;
-      border: 1px solid rgba(216,107,31,0.15);
-      background: rgba(255,255,255,0.72);
-      box-shadow: 0 8px 20px rgba(80,45,24,0.04);
-      white-space: nowrap;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      line-height: 1;
+    .nav a{
+      color:#3a2a22;
+      padding:10px 16px;
+      border-radius:999px;
+      transition:var(--transition);
+      font-size:.92rem;
+      font-weight:700;
+      border:1px solid rgba(216,107,31,.15);
+      background:rgba(255,255,255,.72);
+      box-shadow:0 8px 20px rgba(80,45,24,.04);
+      white-space:nowrap;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      line-height:1;
+      text-align:center;
     }
-    .nav a:hover {
-      color: #fff;
-      background: linear-gradient(135deg, #ffb347, #ff7a18);
-      border-color: transparent;
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(216,107,31,0.18);
+    .nav a:hover{
+      color:#fff;
+      background:linear-gradient(135deg,#ffb347,#ff7a18);
+      border-color:transparent;
+      transform:translateY(-2px);
+      box-shadow:0 12px 24px rgba(216,107,31,.18);
     }
-    .nav-reserve {
-      color: #fff !important;
-      background: linear-gradient(135deg, #ffb347, #ff7a18) !important;
-      border-color: transparent !important;
-      box-shadow: 0 14px 30px rgba(216,107,31,0.22) !important;
-      position: relative;
-      overflow: hidden;
+    .nav-reserve{
+      color:#fff !important;
+      background:linear-gradient(135deg,#ffb347,#ff7a18) !important;
+      border-color:transparent !important;
+      box-shadow:0 14px 30px rgba(216,107,31,.22) !important;
+      position:relative;
+      overflow:hidden;
     }
-    .nav-reserve::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -120%;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.28), transparent);
-      transform: skewX(-20deg);
-      animation: shine 3.4s infinite;
+    .nav-reserve::after{
+      content:"";
+      position:absolute;
+      top:0;left:-120%;
+      width:60%;height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);
+      transform:skewX(-20deg);
+      animation:shine 3.4s infinite;
     }
 
-    .hero-wrap { display: grid; grid-template-columns: 1fr; }
-    .hero-unified {
-      padding: 32px;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 30px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, rgba(255,253,250,.97), rgba(246,237,227,.94));
-      box-shadow: 0 26px 76px rgba(74,44,23,.12);
-      border-radius: var(--radius);
-      border: 1px solid rgba(216,107,31,0.12);
+    .hero-wrap{display:grid;grid-template-columns:1fr}
+    .hero-unified{
+      padding:32px;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:30px;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg,rgba(255,253,250,.97),rgba(246,237,227,.94));
+      box-shadow:0 26px 76px rgba(74,44,23,.12);
+      border-radius:var(--radius);
+      border:1px solid rgba(216,107,31,.12);
     }
-    .hero-unified::before {
-      content: "";
-      position: absolute;
-      inset: 0;
+    .hero-unified::before{
+      content:"";
+      position:absolute;
+      inset:0;
       background:
         radial-gradient(circle at 80% 22%, rgba(216,107,31,.11), transparent 20%),
         radial-gradient(circle at 16% 84%, rgba(180,67,42,.08), transparent 22%);
-      pointer-events: none;
+      pointer-events:none;
     }
-    .hero-main, .hero-side { position: relative; z-index: 1; }
-    .hero-side {
-      padding-left: 18px;
-      border-left: 1px solid rgba(96,63,41,.08);
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(96,63,41,.08);
-      background: rgba(255,255,255,0.58);
-      color: #8a5a35;
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      margin: 18px 0 16px;
-      font-size: clamp(3rem, 6vw, 5.4rem);
-      line-height: .94;
-      letter-spacing: -0.07em;
-      color: var(--text);
-      text-wrap: balance;
-    }
-    .hero h1 span {
-      background: linear-gradient(135deg, #7b3b1f, #d86b1f 45%, #efb36b 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .lead {
-      color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.82;
-      max-width: 760px;
-      margin: 0;
-      text-wrap: pretty;
+    .hero-main,.hero-side{position:relative;z-index:1}
+    .hero-side{
+      padding-left:18px;
+      border-left:1px solid rgba(96,63,41,.08);
     }
 
-    .stats, .feature-list, .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .stats { margin-top: 24px; }
-    .actions { margin-top: 28px; }
-
-    .pill {
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(96,63,41,0.08);
-      background: rgba(255,255,255,0.58);
-      color: #3a2c23;
-      font-size: .92rem;
-      font-weight: 600;
-      transition: var(--transition);
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(96,63,41,.08);
+      background:rgba(255,255,255,.58);
+      color:#8a5a35;
+      font-size:.84rem;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
     }
-    .pill:hover { transform: translateY(-2px); }
-
-    .quick-highlights {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 18px;
+    .hero h1{
+      margin:18px 0 16px;
+      font-size:clamp(3rem,6vw,5.4rem);
+      line-height:.94;
+      letter-spacing:-.07em;
+      color:var(--text);
+      text-wrap:balance;
     }
-    .quick-item {
-      padding: 12px 14px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.56);
-      border: 1px solid rgba(216,107,31,0.10);
-      color: #4b392f;
-      font-size: .9rem;
-      font-weight: 700;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(80,45,24,0.04);
+    .hero h1 span{
+      background:linear-gradient(135deg,#7b3b1f,#d86b1f 45%,#efb36b 100%);
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 20px;
-      border-radius: 18px;
-      border: 1px solid transparent;
-      font-weight: 800;
-      font-size: 0.96rem;
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
-      white-space: nowrap;
-    }
-    .btn:hover { transform: translateY(-3px); }
-    .btn-primary {
-      color: #fff7f0;
-      background: linear-gradient(135deg, #d8893d, var(--orange), #b74d28);
-      box-shadow: 0 16px 34px rgba(216,107,31,0.22);
-    }
-    .btn-secondary {
-      border-color: rgba(96,63,41,0.10);
-      background: rgba(255,255,255,0.62);
-      color: var(--text);
-    }
-    .btn-whatsapp {
-      border-color: rgba(37, 211, 102, 0.30);
-      background: rgba(37,211,102,0.14);
-      color: #13733a;
+    .lead{
+      color:var(--muted);
+      font-size:1.06rem;
+      line-height:1.82;
+      max-width:760px;
+      margin:0;
+      text-wrap:pretty;
     }
 
-    .card-kicker {
-      color: #8a5a35;
-      font-size: .78rem;
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-weight: 800;
-    }
-    .hero-side h2 {
-      margin: 12px 0 12px;
-      font-size: clamp(1.7rem,3vw,2.7rem);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-      color: var(--text);
-      text-wrap: balance;
-    }
-    .hero-side p,
-    .story-card p,
-    .menu-card p,
-    .map-card p,
-    .reviews-intro { color: var(--muted); line-height: 1.76; }
+    .stats,.feature-list,.actions{display:flex;flex-wrap:wrap;gap:12px}
+    .stats{margin-top:24px}
+    .actions{margin-top:28px}
 
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 22px;
+    .pill{
+      padding:12px 16px;
+      border-radius:999px;
+      border:1px solid rgba(96,63,41,.08);
+      background:rgba(255,255,255,.58);
+      color:#3a2c23;
+      font-size:.92rem;
+      font-weight:600;
+      transition:var(--transition);
     }
-    .menu-item {
-      padding: 16px;
-      border-radius: 18px;
-      border: 1px solid rgba(96,63,41,0.08);
-      background: rgba(255,255,255,0.60);
-      color: #2f221b;
-      font-weight: 600;
-      transition: var(--transition);
+    .pill:hover{transform:translateY(-2px)}
+
+    .quick-highlights{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+      margin-top:18px;
     }
-    .menu-item:hover { transform: translateY(-3px); }
-    .loyalty {
-      margin-top: 18px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(216,107,31,0.18);
-      background: linear-gradient(135deg, rgba(239,179,107,0.18), rgba(216,107,31,0.09));
-      color: #774521;
-      line-height: 1.6;
+    .quick-item{
+      padding:12px 14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.56);
+      border:1px solid rgba(216,107,31,.10);
+      color:#4b392f;
+      font-size:.9rem;
+      font-weight:700;
+      text-align:center;
+      box-shadow:0 8px 20px rgba(80,45,24,.04);
     }
 
-    .section { padding: 20px 0 56px; }
-    .cards-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 20px;
+      border-radius:18px;
+      border:1px solid transparent;
+      font-weight:800;
+      font-size:.96rem;
+      transition:transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
+      white-space:nowrap;
     }
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+    .btn:hover{transform:translateY(-3px)}
+    .btn-primary{
+      color:#fff7f0;
+      background:linear-gradient(135deg,#d8893d,var(--orange),#b74d28);
+      box-shadow:0 16px 34px rgba(216,107,31,.22);
     }
-    .info-card, .social-card, .story-card, .menu-card, .map-card {
-      padding: 22px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(216,107,31,0.16);
-      box-shadow: 0 0 0 1px rgba(216,107,31,0.06), 0 18px 60px rgba(80,45,24,0.10);
-      background: linear-gradient(135deg, rgba(255,251,247,.98), rgba(248,239,229,.95));
+    .btn-secondary{
+      border-color:rgba(96,63,41,.10);
+      background:rgba(255,255,255,.62);
+      color:var(--text);
     }
-    .card-title {
-      margin: 0 0 16px;
-      font-size: 1.42rem;
-      letter-spacing: -0.04em;
-      color: var(--text);
-      text-wrap: balance;
-    }
-
-    .detail-list { display: grid; gap: 12px; }
-    .detail-item {
-      padding-bottom: 12px;
-      border-bottom: 1px solid rgba(96,63,41,0.08);
-      color: var(--muted);
-      line-height: 1.68;
-    }
-    .detail-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .detail-item strong { display: block; margin-bottom: 4px; color: var(--text); font-size: .95rem; }
-
-    .social-links { display: grid; gap: 10px; }
-    .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      transition: var(--transition);
-      font-weight: 700;
-    }
-    .social-link:hover { transform: translateY(-3px); box-shadow: 0 14px 24px rgba(80,45,24,0.10); }
-    .social-link.instagram { background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf); color: #fff; }
-    .social-link.facebook { background: linear-gradient(135deg, #1877f2, #3b5998); color: #fff; }
-    .social-link.linktree { background: #39e09b; color: #0f172a; }
-    .social-link span:last-child { font-size: .85rem; opacity: 0.92; }
-
-    .delivery-links { display: grid; gap: 10px; }
-    .delivery-link {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 13px;
-      border-radius: 16px;
-      border: 1px solid rgba(96,63,41,0.08);
-      background: rgba(255,255,255,0.56);
-      transition: var(--transition);
-      min-width: 0;
-    }
-    .delivery-link:hover {
-      transform: translateY(-3px);
-      border-color: rgba(96,63,41,0.16);
-      background: rgba(255,255,255,0.72);
-      box-shadow: 0 14px 24px rgba(80,45,24,0.08);
-    }
-    .delivery-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 40px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-    }
-    .delivery-text {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      min-width: 0;
-    }
-    .delivery-text strong { font-size: .95rem; letter-spacing: -0.02em; color: var(--text); }
-    .delivery-text small { color: var(--muted); font-size: .82rem; }
-
-    .map-card iframe {
-      width: 100%;
-      height: 320px;
-      border: 0;
-      border-radius: 18px;
-      margin-top: 18px;
-      filter: grayscale(.15) contrast(1.02);
-      opacity: .98;
+    .btn-whatsapp{
+      border-color:rgba(37,211,102,.30);
+      background:rgba(37,211,102,.14);
+      color:#13733a;
     }
 
-    .reviews-section {
-      border-radius: var(--radius);
-      border: none;
-      box-shadow: 0 24px 70px rgba(160,78,6,.22);
-      overflow: hidden;
-      background: linear-gradient(180deg, #d76b10 0%, #f08a00 100%);
+    .card-kicker{
+      color:#8a5a35;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-weight:800;
     }
-    .reviews-wrap { padding: 34px 24px; overflow: hidden; }
-    .reviews-grid {
-      display: flex;
-      gap: 14px;
-      width: max-content;
-      animation: reviewsTicker 42s linear infinite;
-      will-change: transform;
+    .hero-side h2{
+      margin:12px 0 12px;
+      font-size:clamp(1.7rem,3vw,2.7rem);
+      line-height:1.05;
+      letter-spacing:-.05em;
+      color:var(--text);
+      text-wrap:balance;
     }
-    .reviews-grid:hover { animation-play-state: paused; }
-    .review-card {
-      padding: 18px;
-      border-radius: 20px;
-      border: none;
-      background: #f7f7f8;
-      transition: var(--transition);
-      width: 292px;
-      min-width: 292px;
-      min-height: 206px;
-      box-shadow: none;
-      color: #111;
+    .hero-side p,.story-card p,.menu-card p,.map-card p,.reviews-intro{color:var(--muted);line-height:1.76}
+
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin-top:22px;
     }
-    .review-card:hover { transform: translateY(-4px); }
-    .review-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 12px;
+    .menu-item{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(96,63,41,.08);
+      background:rgba(255,255,255,.60);
+      color:#2f221b;
+      font-weight:600;
+      transition:var(--transition);
     }
-    .review-name {
-      margin: 0;
-      font-size: 1rem;
-      font-weight: 800;
-      color: #111;
-      line-height: 1.25;
-    }
-    .review-meta {
-      color: #555;
-      font-size: .84rem;
-      line-height: 1.4;
-    }
-    .stars {
-      letter-spacing: .06em;
-      color: #f4b400;
-      font-size: 1rem;
-      margin: 0 0 10px;
-    }
-    .review-card p {
-      margin: 0;
-      color: #111;
-      line-height: 1.55;
-      font-size: .98rem;
+    .menu-item:hover{transform:translateY(-3px)}
+    .loyalty{
+      margin-top:18px;
+      padding:16px 18px;
+      border-radius:18px;
+      border:1px solid rgba(216,107,31,.18);
+      background:linear-gradient(135deg,rgba(239,179,107,.18),rgba(216,107,31,.09));
+      color:#774521;
+      line-height:1.6;
     }
 
-    .floating-whatsapp,
-    .floating-social {
-      position: fixed;
-      right: 22px;
-      z-index: 60;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-      transition: transform var(--transition), box-shadow var(--transition);
-      border: 1px solid rgba(255,255,255,0.22);
+    .section{padding:20px 0 56px}
+    .cards-3{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:16px;
     }
-    .floating-whatsapp:hover,
-    .floating-social:hover { transform: translateY(-4px) scale(1.04); }
-    .floating-whatsapp {
-      bottom: 18px;
-      background: linear-gradient(135deg, #4af38a, var(--green));
-      box-shadow: 0 18px 40px rgba(37,211,102,0.26);
-      color: #0f1b12;
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
     }
-    .floating-social.instagram { bottom: 154px; background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); color: white; }
-    .floating-social.facebook { bottom: 86px; background: linear-gradient(135deg, #3b5998, var(--blue)); color: white; }
-    .floating-social.reserva {
-      bottom: 222px;
-      background: linear-gradient(135deg, #ffd27a, #ffb347, #ff7a18);
-      color: #1b110a;
-      box-shadow: 0 18px 40px rgba(255,122,24,0.24);
+    .info-card,.social-card,.story-card,.menu-card,.map-card{
+      padding:22px;
+      border-radius:var(--radius);
+      border:1px solid rgba(216,107,31,.16);
+      box-shadow:0 0 0 1px rgba(216,107,31,.06),0 18px 60px rgba(80,45,24,.10);
+      background:linear-gradient(135deg,rgba(255,251,247,.98),rgba(248,239,229,.95));
     }
-    .floating-social.reserva::before {
-      content: "";
-      position: absolute;
-      inset: -8px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,179,71,.35);
-      animation: pulseReserva 2.4s infinite;
-    }
-    .floating-social.reserva::after {
-      content: "Reservar";
-      position: absolute;
-      right: 72px;
-      white-space: nowrap;
-      padding: 8px 11px;
-      border-radius: 999px;
-      background: rgba(38,26,20,.92);
-      border: 1px solid rgba(255,179,71,.24);
-      color: #ffe3bf;
-      font-size: .82rem;
-      font-weight: 800;
-      letter-spacing: -.01em;
-      box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    .card-title{
+      margin:0 0 16px;
+      font-size:1.42rem;
+      letter-spacing:-.04em;
+      color:var(--text);
+      text-wrap:balance;
     }
 
-    .fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp .8s ease forwards;
+    .detail-list{display:grid;gap:12px}
+    .detail-item{
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(96,63,41,.08);
+      color:var(--muted);
+      line-height:1.68;
     }
-    .delay-1 { animation-delay: .08s; }
-    .delay-2 { animation-delay: .16s; }
-    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-    @keyframes shine {
-      0% { left: -120%; }
-      55%, 100% { left: 140%; }
+    .detail-item:last-child{border-bottom:none;padding-bottom:0}
+    .detail-item strong{display:block;margin-bottom:4px;color:var(--text);font-size:.95rem}
+
+    .social-links{display:grid;gap:10px}
+    .social-link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:14px 16px;
+      border-radius:16px;
+      transition:var(--transition);
+      font-weight:700;
     }
-    @keyframes pulseReserva {
-      0% { transform: scale(1); opacity: .9; }
-      70% { transform: scale(1.12); opacity: 0; }
-      100% { transform: scale(1.12); opacity: 0; }
+    .social-link:hover{transform:translateY(-3px);box-shadow:0 14px 24px rgba(80,45,24,.10)}
+    .social-link.instagram{background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf);color:#111}
+    .social-link.facebook{background:linear-gradient(135deg,#1877f2,#3b5998);color:#111}
+    .social-link.linktree{background:#39e09b;color:#111}
+    .social-link span:last-child{font-size:.85rem;opacity:1;color:#111;font-weight:700}
+
+    .delivery-links{display:grid;gap:10px}
+    .delivery-link{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:13px;
+      border-radius:16px;
+      border:1px solid rgba(96,63,41,.08);
+      background:rgba(255,255,255,.56);
+      transition:var(--transition);
+      min-width:0;
     }
-    @keyframes reviewsTicker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .delivery-link:hover{
+      transform:translateY(-3px);
+      border-color:rgba(96,63,41,.16);
+      background:rgba(255,255,255,.72);
+      box-shadow:0 14px 24px rgba(80,45,24,.08);
+    }
+    .delivery-logo{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      flex:0 0 40px;
+      box-shadow:0 10px 24px rgba(0,0,0,.12);
+    }
+    .delivery-text{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+      min-width:0;
+    }
+    .delivery-text strong{font-size:.95rem;letter-spacing:-.02em;color:var(--text)}
+    .delivery-text small{color:var(--muted);font-size:.82rem}
+
+    .delivery-link.glovo{
+      background:#F2CC00;
+      border-color:#D8B800;
+    }
+    .delivery-link.glovo .delivery-text strong{color:#00A082}
+    .delivery-link.glovo .delivery-text small{color:#00856d}
+
+    .delivery-link.justeat{
+      background:#ff4f19;
+      border-color:#e04312;
+    }
+    .delivery-link.justeat .delivery-text strong,
+    .delivery-link.justeat .delivery-text small{
+      color:#fff;
     }
 
-    @media (max-width: 1080px) {
-      .hero-unified {
-        grid-template-columns: 1fr;
-        padding: 24px;
+    .delivery-link.uber{
+      background:#06c167;
+      border-color:#04a857;
+    }
+    .delivery-link.uber .delivery-text strong,
+    .delivery-link.uber .delivery-text small{
+      color:#000;
+    }
+
+    .map-card iframe{
+      width:100%;
+      height:320px;
+      border:0;
+      border-radius:18px;
+      margin-top:18px;
+      filter:grayscale(.15) contrast(1.02);
+      opacity:.98;
+    }
+
+    .reviews-section{
+      border-radius:var(--radius);
+      border:none;
+      box-shadow:0 24px 70px rgba(160,78,6,.22);
+      overflow:hidden;
+      background:linear-gradient(180deg,#d76b10 0%,#f08a00 100%);
+    }
+    .reviews-wrap{padding:34px 24px;overflow:hidden}
+    .reviews-grid{
+      display:flex;
+      gap:14px;
+      width:max-content;
+      animation:reviewsTicker 42s linear infinite;
+      will-change:transform;
+    }
+    .reviews-grid:hover{animation-play-state:paused}
+    .review-card{
+      padding:18px;
+      border-radius:20px;
+      border:none;
+      background:#f7f7f8;
+      transition:var(--transition);
+      width:292px;
+      min-width:292px;
+      min-height:206px;
+      box-shadow:none;
+      color:#111;
+    }
+    .review-card:hover{transform:translateY(-4px)}
+    .review-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .review-name{
+      margin:0;
+      font-size:1rem;
+      font-weight:800;
+      color:#111;
+      line-height:1.25;
+    }
+    .review-meta{
+      color:#555;
+      font-size:.84rem;
+      line-height:1.4;
+    }
+    .stars{
+      letter-spacing:.06em;
+      color:#f4b400;
+      font-size:1rem;
+      margin:0 0 10px;
+    }
+    .review-card p{
+      margin:0;
+      color:#111;
+      line-height:1.55;
+      font-size:.98rem;
+    }
+
+    .verified-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#4da3ff,#1a73e8);
+      box-shadow:0 4px 10px rgba(26,115,232,.22);
+      margin-left:6px;
+      vertical-align:middle;
+      border:1px solid rgba(255,255,255,.75);
+    }
+    .verified-badge svg{
+      width:11px;
+      height:11px;
+      display:block;
+    }
+
+    .floating-whatsapp,.floating-social{
+      position:fixed;
+      right:22px;
+      z-index:60;
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      box-shadow:0 18px 40px rgba(0,0,0,.18);
+      transition:transform var(--transition), box-shadow var(--transition);
+      border:1px solid rgba(255,255,255,.22);
+    }
+    .floating-whatsapp:hover,.floating-social:hover{transform:translateY(-4px) scale(1.04)}
+    .floating-whatsapp{
+      bottom:18px;
+      background:linear-gradient(135deg,#4af38a,var(--green));
+      box-shadow:0 18px 40px rgba(37,211,102,.26);
+      color:#0f1b12;
+    }
+    .floating-social.instagram{bottom:154px;background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);color:white}
+    .floating-social.facebook{bottom:86px;background:linear-gradient(135deg,#3b5998,var(--blue));color:white}
+    .floating-social.reserva{
+      bottom:222px;
+      background:linear-gradient(135deg,#ffd27a,#ffb347,#ff7a18);
+      color:#1b110a;
+      box-shadow:0 18px 40px rgba(255,122,24,.24);
+    }
+    .floating-social.reserva::before{
+      content:"";
+      position:absolute;
+      inset:-8px;
+      border-radius:50%;
+      border:1px solid rgba(255,179,71,.35);
+      animation:pulseReserva 2.4s infinite;
+    }
+    .floating-social.reserva::after{
+      content:"Reservar";
+      position:absolute;
+      right:72px;
+      white-space:nowrap;
+      padding:8px 11px;
+      border-radius:999px;
+      background:rgba(38,26,20,.92);
+      border:1px solid rgba(255,179,71,.24);
+      color:#ffe3bf;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:-.01em;
+      box-shadow:0 12px 28px rgba(0,0,0,.18);
+    }
+
+    .fade-up{
+      opacity:0;
+      transform:translateY(20px);
+      animation:fadeUp .8s ease forwards;
+    }
+    .delay-1{animation-delay:.08s}
+    .delay-2{animation-delay:.16s}
+
+    @keyframes fadeUp{
+      to{opacity:1;transform:translateY(0)}
+    }
+    @keyframes shine{
+      0%{left:-120%}
+      55%,100%{left:140%}
+    }
+    @keyframes pulseReserva{
+      0%{transform:scale(1);opacity:.9}
+      70%{transform:scale(1.12);opacity:0}
+      100%{transform:scale(1.12);opacity:0}
+    }
+    @keyframes reviewsTicker{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-50%)}
+    }
+
+    @media (max-width:1080px){
+      .hero-unified{
+        grid-template-columns:1fr;
+        padding:24px;
       }
-      .hero-side {
-        border-left: 0;
-        padding-left: 0;
-        border-top: 1px solid rgba(96,63,41,.08);
-        padding-top: 22px;
+      .hero-side{
+        border-left:0;
+        padding-left:0;
+        border-top:1px solid rgba(96,63,41,.08);
+        padding-top:22px;
       }
-      .cards-3,
-      .two-col,
-      .hero-wrap { grid-template-columns: 1fr; }
-      .quick-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cards-3,.two-col,.hero-wrap{grid-template-columns:1fr}
+      .quick-highlights{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
 
-    @media (max-width: 760px) {
-      .container { width: min(var(--max), calc(100% - 18px)); }
-      .topbar { top: 10px; }
-      .topbar-inner {
-        border-radius: 20px;
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 14px;
+    @media (max-width:760px){
+      .container{width:min(var(--max),calc(100% - 18px))}
+      .topbar{top:10px}
+      .topbar-inner{
+        border-radius:20px;
+        align-items:flex-start;
+        flex-direction:column;
+        padding:14px;
       }
-      .brand { width: 100%; }
-      .brand-text { min-width: 0; }
-      .nav {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 8px;
+      .brand{width:100%}
+      .brand-text{min-width:0}
+      .nav{
+        width:100%;
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:8px;
       }
-      .nav a {
-        padding: 11px 12px;
-        font-size: .88rem;
-        min-height: 46px;
-        text-align: center;
-        white-space: normal;
+      .nav a{
+        padding:11px 12px;
+        font-size:.88rem;
+        min-height:46px;
+        text-align:center;
+        white-space:normal;
       }
-      .nav .nav-reserve { grid-column: 1 / -1; }
-      .info-card,
-      .social-card,
-      .story-card,
-      .menu-card,
-      .map-card,
-      .reviews-wrap,
-      .hero-unified { padding: 18px; }
-      .hero h1 { font-size: clamp(2.45rem, 12vw, 3.8rem); }
-      .lead { font-size: 1rem; line-height: 1.72; }
-      .menu-grid { grid-template-columns: 1fr; }
-      .actions,
-      .stats,
-      .feature-list { flex-direction: column; align-items: stretch; }
-      .quick-highlights { grid-template-columns: 1fr; }
-      .btn { width: 100%; }
-      .map-card iframe { height: 260px; }
-      .social-link,
-      .delivery-link { padding: 12px 14px; }
-      .social-link span:last-child,
-      .delivery-text small { font-size: .8rem; }
-      .review-card { width: 260px; min-width: 260px; }
-      .floating-social,
-      .floating-whatsapp {
-        width: 54px;
-        height: 54px;
-        right: 12px;
+      .nav .nav-reserve{grid-column:1 / -1}
+      .info-card,.social-card,.story-card,.menu-card,.map-card,.reviews-wrap,.hero-unified{padding:18px}
+      .hero h1{font-size:clamp(2.45rem,12vw,3.8rem)}
+      .lead{font-size:1rem;line-height:1.72}
+      .menu-grid{grid-template-columns:1fr}
+      .actions,.stats,.feature-list{flex-direction:column;align-items:stretch}
+      .quick-highlights{grid-template-columns:1fr}
+      .btn{width:100%}
+      .map-card iframe{height:260px}
+      .social-link,.delivery-link{padding:12px 14px}
+      .social-link span:last-child,.delivery-text small{font-size:.8rem}
+      .review-card{width:260px;min-width:260px}
+      .floating-social,.floating-whatsapp{
+        width:54px;
+        height:54px;
+        right:12px;
       }
-      .floating-social.reserva { bottom: 198px; }
-      .floating-social.reserva::after { display: none; }
-      .floating-social.instagram { bottom: 138px; }
-      .floating-social.facebook { bottom: 78px; }
-      .floating-whatsapp { bottom: 12px; }
+      .floating-social.reserva{bottom:198px}
+      .floating-social.reserva::after{display:none}
+      .floating-social.instagram{bottom:138px}
+      .floating-social.facebook{bottom:78px}
+      .floating-whatsapp{bottom:12px}
     }
   </style>
 </head>
@@ -635,6 +659,7 @@
               <span>Street Food Colombiano en Barcelona</span>
             </div>
           </div>
+
           <nav class="nav">
             <a href="#inicio">🏠 Inicio</a>
             <a href="#informacion">📋 Información</a>
@@ -652,12 +677,14 @@
             <div class="eyebrow">Sabor, locura y buena vibra</div>
             <h1>Crazy Wings <span>BCN</span></h1>
             <p class="lead">Restaurante de comida rápida colombiana con mucha personalidad, estética inspirada en cómics de vieja guardia y alma de food truck. Un sitio pensado para venir con ganas de disfrutar, comer muy bien y quedarse con ganas de volver.</p>
+
             <div class="stats">
               <div class="pill">Terraza</div>
               <div class="pill">Platos veganos</div>
-              <div class="pill">Wi‑Fi</div>
+              <div class="pill">Wi-Fi</div>
               <div class="pill">Precio medio: 10–20 €</div>
             </div>
+
             <div class="actions">
               <a class="btn btn-primary" href="https://drive.google.com/file/d/1iLZQvjmu5ORGtHCh0nDIccwX65xw_f1y/view" target="_blank" rel="noopener noreferrer">📖 Ver menú</a>
               <a class="btn btn-secondary" href="#ubicacion">📍 Ubicación</a>
@@ -666,6 +693,7 @@
               <a class="btn btn-primary" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">🍽️ Reservar mesa</a>
               <a class="btn btn-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">💬 Pedir por WhatsApp</a>
             </div>
+
             <div class="quick-highlights">
               <div class="quick-item">🔥 Sabor colombiano</div>
               <div class="quick-item">🍗 Alitas y burgers</div>
@@ -683,12 +711,15 @@
                 <img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=1200&q=80" alt="Alitas de pollo" style="width:100%; height:180px; object-fit:cover;">
               </div>
             </div>
+
             <div style="display:flex; justify-content:center; margin-bottom:18px;">
               <img src="logo-crazy-wings.png" alt="Logo Crazy Wings BCN" style="width:320px; max-width:100%; filter: drop-shadow(0 24px 44px rgba(216,107,31,.22));">
             </div>
+
             <div class="card-kicker">Especialidades</div>
             <h2>Street Food colombiano con presencia, carácter y un sabor que no pasa desapercibido.</h2>
             <p>Especializados en alitas con salsas únicas, hot dogs, burgers, tequeños, arepas y más. Una propuesta pensada para foodies, amantes del picante, grupos de amigos y clientes que buscan comer rico en un sitio con rollo propio.</p>
+
             <div class="menu-grid">
               <div class="menu-item">Alitas con salsas únicas</div>
               <div class="menu-item">Hot Dogs</div>
@@ -697,6 +728,7 @@
               <div class="menu-item">Arepas</div>
               <div class="menu-item">Más street food colombiano</div>
             </div>
+
             <div class="loyalty"><strong>Programa Crazy Fans:</strong> cada visita te acerca a un premio delicioso.</div>
           </div>
         </section>
@@ -735,16 +767,27 @@
           <h3 class="card-title">Redes sociales</h3>
           <div class="social-links">
             <a class="social-link instagram" href="https://www.instagram.com/crazywingsbcn/" target="_blank" rel="noopener noreferrer">
-              <span style="display:flex;align-items:center;gap:10px;"><img src="https://cdn.worldvectorlogo.com/logos/instagram-2016-5.svg" alt="Instagram" style="width:20px;height:20px;"><strong>Instagram</strong></span>
-              <span>@crazywingsbcn</span>
+              <span style="display:flex;align-items:center;gap:10px;color:#111;">
+                <img src="https://cdn.worldvectorlogo.com/logos/instagram-2016-5.svg" alt="Instagram" style="width:20px;height:20px;">
+                <strong>Instagram</strong>
+              </span>
+              <span style="color:#111;font-weight:700;">@crazywingsbcn</span>
             </a>
+
             <a class="social-link facebook" href="https://www.facebook.com/CRAZYWINGSBCN" target="_blank" rel="noopener noreferrer">
-              <span style="display:flex;align-items:center;gap:10px;"><img src="https://cdn.worldvectorlogo.com/logos/facebook-3-2.svg" alt="Facebook" style="width:20px;height:20px;"><strong>Facebook</strong></span>
-              <span>Crazy Wings BCN</span>
+              <span style="display:flex;align-items:center;gap:10px;color:#111;">
+                <img src="https://cdn.worldvectorlogo.com/logos/facebook-3-2.svg" alt="Facebook" style="width:20px;height:20px;">
+                <strong>Facebook</strong>
+              </span>
+              <span style="color:#111;font-weight:700;">Crazy Wings BCN</span>
             </a>
+
             <a class="social-link linktree" href="https://linktr.ee/Crazywingsbcn" target="_blank" rel="noopener noreferrer">
-              <span style="display:flex;align-items:center;gap:10px;"><img src="https://cdn.worldvectorlogo.com/logos/linktree-2.svg" alt="Linktree" style="width:20px;height:20px;"><strong>Linktree</strong></span>
-              <span>Menú y accesos</span>
+              <span style="display:flex;align-items:center;gap:10px;color:#111;">
+                <img src="https://cdn.worldvectorlogo.com/logos/linktree-2.svg" alt="Linktree" style="width:20px;height:20px;">
+                <strong>Linktree</strong>
+              </span>
+              <span style="color:#111;font-weight:700;">Menú y accesos</span>
             </a>
           </div>
         </article>
@@ -753,18 +796,36 @@
           <h3 class="card-title">🛵 Pedido a domicilio</h3>
           <div style="display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.62); border:1px solid rgba(216,107,31,.12); color:#8a5a35; font-size:.82rem; font-weight:800; margin-bottom:12px;">Apps disponibles</div>
           <p>Realiza tu pedido desde nuestras plataformas de reparto disponibles en Barcelona.</p>
+
           <div class="delivery-links" style="margin-top:18px; grid-template-columns:1fr;">
-            <a class="delivery-link" href="https://glovoapp.com/es/es/barcelona/stores/crazy-wings-bcn-bcn?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener noreferrer">
-              <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/glovo-1.svg" alt="Glovo" style="width:100%;height:100%;object-fit:contain;"></span>
-              <span class="delivery-text"><strong>Glovo</strong><small>Entrega a domicilio</small></span>
+            <a class="delivery-link glovo" href="https://glovoapp.com/es/es/barcelona/stores/crazy-wings-bcn-bcn?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener noreferrer">
+              <span class="delivery-logo" style="background:#fff; padding:6px;">
+                <img src="https://cdn.worldvectorlogo.com/logos/glovo-1.svg" alt="Glovo" style="width:100%;height:100%;object-fit:contain;">
+              </span>
+              <span class="delivery-text">
+                <strong>Glovo</strong>
+                <small>Entrega a domicilio</small>
+              </span>
             </a>
-            <a class="delivery-link" href="https://www.just-eat.es/restaurants-crazy-wings-and--bcn-barcelona/menu?serviceType=collection&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener noreferrer">
-              <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/just-eat.svg" alt="Just Eat" style="width:100%;height:100%;object-fit:contain;"></span>
-              <span class="delivery-text"><strong>Just Eat</strong><small>Pedido online</small></span>
+
+            <a class="delivery-link justeat" href="https://www.just-eat.es/restaurants-crazy-wings-and--bcn-barcelona/menu?serviceType=collection&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener noreferrer">
+              <span class="delivery-logo" style="background:#fff; padding:6px;">
+                <img src="https://cdn.worldvectorlogo.com/logos/just-eat.svg" alt="Just Eat" style="width:100%;height:100%;object-fit:contain;">
+              </span>
+              <span class="delivery-text">
+                <strong>Just Eat</strong>
+                <small>Pedido online</small>
+              </span>
             </a>
-            <a class="delivery-link" href="https://www.ubereats.com/es/store/crazy-wings-%26-%2B-bcn/NdfNtVPbWs2m6wFVDTRvkw?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer">
-              <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/uber-eats.svg" alt="Uber Eats" style="width:100%;height:100%;object-fit:contain;"></span>
-              <span class="delivery-text"><strong>Uber Eats</strong><small>Recogida / pedido online</small></span>
+
+            <a class="delivery-link uber" href="https://www.ubereats.com/es/store/crazy-wings-%26-%2B-bcn/NdfNtVPbWs2m6wFVDTRvkw?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer">
+              <span class="delivery-logo" style="background:#fff; padding:6px;">
+                <img src="https://cdn.worldvectorlogo.com/logos/uber-eats.svg" alt="Uber Eats" style="width:100%;height:100%;object-fit:contain;">
+              </span>
+              <span class="delivery-text">
+                <strong>Uber Eats</strong>
+                <small>Recogida / pedido online</small>
+              </span>
             </a>
           </div>
         </article>
@@ -798,115 +859,184 @@
               <div style="font-size:2rem; font-weight:900; letter-spacing:-.03em;">EXCELENTE</div>
               <div style="font-size:1.8rem; line-height:1; margin-top:6px; color:#ffd700;">★★★★☆</div>
               <div style="margin-top:8px; font-size:1.04rem; font-weight:700; color:#20140c;">4,5 (+700 reseñas)</div>
-              <div style="margin-top:10px; display:flex; justify-content:center;"><img src="https://cdn.worldvectorlogo.com/logos/google-1-1.svg" alt="Google" style="height:30px;"></div>
+              <div style="margin-top:10px; display:flex; justify-content:center;">
+                <img src="https://cdn.worldvectorlogo.com/logos/google-1-1.svg" alt="Google" style="height:30px;">
+              </div>
               <div style="margin-top:14px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
                 <a href="https://www.google.com/maps/place/Crazy+Wings+%26+%2B+Bcn/@41.4122906,2.1687611,17z/data=!4m8!3m7!1s0x12a4a2c3b6274289:0x8f262e5900d93eca!8m2!3d41.4122906!4d2.1687611!9m1!1b1!16s%2Fg%2F11bv2fgsn8?hl=es-ES&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="background:#fff; color:#111; padding:12px 18px; border-radius:999px; font-weight:800; display:inline-flex; align-items:center; gap:8px; box-shadow:0 10px 20px rgba(0,0,0,.10);">🔎 Ver reseñas</a>
+
                 <a href="https://www.google.com/search?sca_esv=b692c664f4ad5dff&sxsrf=ANbL-n5m8E8DgC8EMwJXmkt5IPLpQO16Rg:1774745138095&q=Crazy+Wings+%26+%2B+Bcn+Rese%C3%B1as&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDA2NLG0MLI0NTM2trQ0MDEyMNrAyPiKUca5KLGqUiE8My-9WEFNQVvBKTlPISi1OPXwxsTiRax4pQGQljr2WQAAAA&rldimm=10314982956339904202&tbm=lcl&hl=es-ES&sa=X&ved=2ahUKEwjdopfs8MOTAxWGlP0HHWK4AsEQ9fQKegQIVBAG&biw=1920&bih=945&dpr=1#lkt=LocalPoiReviews&lrd=0x12a4a2c3b6274289:0x8f262e5900d93eca,3,,,," target="_blank" rel="noopener noreferrer" style="background:#111; color:#fff; padding:12px 18px; border-radius:999px; font-weight:800; display:inline-flex; align-items:center; gap:8px; box-shadow:0 10px 20px rgba(0,0,0,.12);">⭐ Dejar reseña</a>
               </div>
             </div>
 
             <div class="reviews-grid">
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">saaid one way</h4><div class="review-meta">hace 3 semanas</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Increíble experiencia. Comida auténtica, deliciosa y con un toque muy especial.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#5d6bc8;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">P</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">pau sanchez</h4><div class="review-meta">hace un mes</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Excelente lugar, muy aseado, trato amable y un ambiente muy agradable.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#8b5cf6;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">A</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Angelo</h4><div class="review-meta">hace 9 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Uno de los mejores restaurantes latinos de Barcelona. Siempre fieles.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sophie Carenzo</h4><div class="review-meta">hace 6 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Ambiente súper animado, atención excelente y comida deliciosa. Volveremos.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0ea5e9;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">K</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Kerly Skaret</h4><div class="review-meta">hace 2 años</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Primera vez y muy contentos. Recomendamos la picada crazy. Salimos felices.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#22c55e;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">V</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Valentina Hernandez</h4><div class="review-meta">hace un mes</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Vengo desde Valencia y entre el ambiente y la comida me siento en Colombia.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#f59e0b;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">D</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">David Gómez</h4><div class="review-meta">hace un año</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Picada espectacular, calidad-precio inmejorable e ideal para compartir.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ec4899;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">O</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Oscar Mauricio Gil Diaz</h4><div class="review-meta">hace 2 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Comida callejera auténtica, arepa generosa y totalmente recomendada.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">M</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Milena Paulina Espinoza</h4><div class="review-meta">hace 8 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Las chicas muy amables, la comida muy rápida y deliciosa. Muy buena experiencia.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">J</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Juan Andres Martinez Marin</h4><div class="review-meta">hace 3 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Comida súper rica, atención excelente y ambiente muy agradable.</p></article>
+              <!-- bloque 1 -->
+              <article class="review-card">
+                <div class="review-top">
+                  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div>
+                    <div style="min-width:0;">
+                      <h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">saaid one way</h4>
+                      <div class="review-meta">hace 3 semanas</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stars">★★★★★
+                  <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span>
+                </div>
+                <p>Increíble experiencia. Comida auténtica, deliciosa y con un toque muy especial.</p>
+              </article>
 
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">saaid one way</h4><div class="review-meta">hace 3 semanas</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Increíble experiencia. Comida auténtica, deliciosa y con un toque muy especial.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#5d6bc8;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">P</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">pau sanchez</h4><div class="review-meta">hace un mes</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Excelente lugar, muy aseado, trato amable y un ambiente muy agradable.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#8b5cf6;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">A</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Angelo</h4><div class="review-meta">hace 9 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Uno de los mejores restaurantes latinos de Barcelona. Siempre fieles.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sophie Carenzo</h4><div class="review-meta">hace 6 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Ambiente súper animado, atención excelente y comida deliciosa. Volveremos.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0ea5e9;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">K</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Kerly Skaret</h4><div class="review-meta">hace 2 años</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Primera vez y muy contentos. Recomendamos la picada crazy. Salimos felices.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#22c55e;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">V</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Valentina Hernandez</h4><div class="review-meta">hace un mes</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Vengo desde Valencia y entre el ambiente y la comida me siento en Colombia.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#f59e0b;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">D</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">David Gómez</h4><div class="review-meta">hace un año</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Picada espectacular, calidad-precio inmejorable e ideal para compartir.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ec4899;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">O</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Oscar Mauricio Gil Diaz</h4><div class="review-meta">hace 2 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Comida callejera auténtica, arepa generosa y totalmente recomendada.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">M</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Milena Paulina Espinoza</h4><div class="review-meta">hace 8 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Las chicas muy amables, la comida muy rápida y deliciosa. Muy buena experiencia.</p></article>
-              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">J</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Juan Andres Martinez Marin</h4><div class="review-meta">hace 3 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
-  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
-    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
-  </svg>
-</span></div><p>Comida súper rica, atención excelente y ambiente muy agradable.</p></article>
+              <article class="review-card">
+                <div class="review-top">
+                  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#5d6bc8;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">P</div>
+                    <div style="min-width:0;">
+                      <h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">pau sanchez</h4>
+                      <div class="review-meta">hace un mes</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stars">★★★★★
+                  <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span>
+                </div>
+                <p>Excelente lugar, muy aseado, trato amable y un ambiente muy agradable.</p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#8b5cf6;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">A</div>
+                    <div style="min-width:0;">
+                      <h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Angelo</h4>
+                      <div class="review-meta">hace 9 meses</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stars">★★★★★
+                  <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span>
+                </div>
+                <p>Uno de los mejores restaurantes latinos de Barcelona. Siempre fieles.</p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div>
+                    <div style="min-width:0;">
+                      <h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sophie Carenzo</h4>
+                      <div class="review-meta">hace 6 meses</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stars">★★★★★
+                  <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span>
+                </div>
+                <p>Ambiente súper animado, atención excelente y comida deliciosa. Volveremos.</p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#0ea5e9;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">K</div>
+                    <div style="min-width:0;">
+                      <h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Kerly Skaret</h4>
+                      <div class="review-meta">hace 2 años</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stars">★★★★★
+                  <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span>
+                </div>
+                <p>Primera vez y muy contentos. Recomendamos la picada crazy. Salimos felices.</p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#22c55e;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">V</div>
+                    <div style="min-width:0;">
+                      <h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Valentina Hernandez</h4>
+                      <div class="review-meta">hace un mes</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stars">★★★★★
+                  <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span>
+                </div>
+                <p>Vengo desde Valencia y entre el ambiente y la comida me siento en Colombia.</p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#f59e0b;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">D</div>
+                    <div style="min-width:0;">
+                      <h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">David Gómez</h4>
+                      <div class="review-meta">hace un año</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stars">★★★★★
+                  <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span>
+                </div>
+                <p>Picada espectacular, calidad-precio inmejorable e ideal para compartir.</p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#ec4899;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">O</div>
+                    <div style="min-width:0;">
+                      <h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Oscar Mauricio Gil Diaz</h4>
+                      <div class="review-meta">hace 2 meses</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stars">★★★★★
+                  <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span>
+                </div>
+                <p>Comida callejera auténtica, arepa generosa y totalmente recomendada.</p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">M</div>
+                    <div style="min-width:0;">
+                      <h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Milena Paulina Espinoza</h4>
+                      <div class="review-meta">hace 8 meses</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stars">★★★★★
+                  <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span>
+                </div>
+                <p>Las chicas muy amables, la comida muy rápida y deliciosa. Muy buena experiencia.</p>
+              </article>
+
+              <article class="review-card">
+                <div class="review-top">
+                  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+                    <div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">J</div>
+                    <div style="min-width:0;">
+                      <h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Juan Andres Martinez Marin</h4>
+                      <div class="review-meta">hace 3 meses</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stars">★★★★★
+                  <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span>
+                </div>
+                <p>Comida súper rica, atención excelente y ambiente muy agradable.</p>
+              </article>
+
+              <!-- duplicado técnico para animación -->
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">saaid one way</h4><div class="review-meta">hace 3 semanas</div></div></div></div><div class="stars">★★★★★ <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span></div><p>Increíble experiencia. Comida auténtica, deliciosa y con un toque muy especial.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#5d6bc8;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">P</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">pau sanchez</h4><div class="review-meta">hace un mes</div></div></div></div><div class="stars">★★★★★ <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span></div><p>Excelente lugar, muy aseado, trato amable y un ambiente muy agradable.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#8b5cf6;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">A</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Angelo</h4><div class="review-meta">hace 9 meses</div></div></div></div><div class="stars">★★★★★ <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span></div><p>Uno de los mejores restaurantes latinos de Barcelona. Siempre fieles.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sophie Carenzo</h4><div class="review-meta">hace 6 meses</div></div></div></div><div class="stars">★★★★★ <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span></div><p>Ambiente súper animado, atención excelente y comida deliciosa. Volveremos.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0ea5e9;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">K</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Kerly Skaret</h4><div class="review-meta">hace 2 años</div></div></div></div><div class="stars">★★★★★ <span class="verified-badge"><svg viewBox="0 0 24 24"><path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"/></svg></span></div><p>Primera vez y muy contentos. Recomendamos la picada crazy. Salimos felices.</p></article>
             </div>
           </div>
         </div>
@@ -924,12 +1054,15 @@
   <a class="floating-social instagram" href="https://www.instagram.com/crazywingsbcn/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram">
     <svg viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px;fill:currentColor;"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5a4.25 4.25 0 0 0 4.25 4.25h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5a4.25 4.25 0 0 0-4.25-4.25h-8.5Zm8.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26ZM12 6.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 6.5Zm0 1.5A4 4 0 1 0 16 12a4 4 0 0 0-4-4Z"/></svg>
   </a>
+
   <a class="floating-social facebook" href="https://www.facebook.com/CRAZYWINGSBCN" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook">
     <svg viewBox="0 0 24 24" aria-hidden="true" style="width:22px;height:22px;fill:currentColor;"><path d="M13.5 22v-8.2h2.77l.41-3.2H13.5V8.56c0-.93.26-1.56 1.59-1.56h1.7V4.14c-.29-.04-1.28-.14-2.43-.14-2.4 0-4.04 1.46-4.04 4.15v2.31H7.6v3.2h2.72V22h3.18Z"/></svg>
   </a>
+
   <a class="floating-social reserva" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer" aria-label="Reservar mesa" title="Reservar mesa">
     <svg viewBox="0 0 24 24" aria-hidden="true" style="width:22px;height:22px;fill:currentColor;"><path d="M3 4.75A2.75 2.75 0 0 1 5.75 2h12.5A2.75 2.75 0 0 1 21 4.75v11.5A2.75 2.75 0 0 1 18.25 19H12.5l-4.86 3.64A.75.75 0 0 1 6.5 22v-3H5.75A2.75 2.75 0 0 1 3 16.25V4.75ZM5.75 3.5c-.69 0-1.25.56-1.25 1.25v11.5c0 .69.56 1.25 1.25 1.25H7.25a.75.75 0 0 1 .75.75v2.25l3.96-2.97a.75.75 0 0 1 .45-.15h5.84c.69 0 1.25-.56 1.25-1.25V4.75c0-.69-.56-1.25-1.25-1.25H5.75Z"/></svg>
   </a>
+
   <a class="floating-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true" style="width:24px;height:24px;fill:currentColor;"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.16 1.59 5.97L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.46-8.44ZM12.08 21.8h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.21-3.74.98 1-3.65-.23-.38a9.86 9.86 0 0 1-1.51-5.25c0-5.47 4.45-9.92 9.92-9.92 2.65 0 5.13 1.03 7 2.91a9.84 9.84 0 0 1 2.9 7c0 5.47-4.45 9.91-9.92 9.91Zm5.44-7.42c-.3-.15-1.78-.88-2.06-.98-.28-.1-.49-.15-.69.15-.2.3-.79.98-.96 1.18-.18.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.8-1.68-2.1-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.69-1.66-.95-2.28-.25-.6-.5-.52-.69-.53h-.59c-.2 0-.53.08-.8.38-.28.3-1.06 1.04-1.06 2.55 0 1.5 1.08 2.95 1.23 3.15.15.2 2.13 3.25 5.16 4.56.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.44.25-.7.25-1.31.17-1.43-.08-.12-.28-.2-.58-.35Z"/></svg>
   </a>
