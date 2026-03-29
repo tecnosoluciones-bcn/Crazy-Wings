@@ -12,8 +12,7 @@
   <style>
     :root {
       --bg: #f4ede5;
-      --panel: rgba(255, 251, 246, 0.92);
-      --panel-strong: rgba(255, 248, 241, 0.98);
+      --panel: rgba(255, 251, 246, 0.94);
       --line: rgba(96, 63, 41, 0.10);
       --text: #231814;
       --muted: #68554a;
@@ -62,7 +61,7 @@
       gap: 18px;
       padding: 14px 18px;
       border-radius: 22px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.82), rgba(255,247,239,0.80));
+      background: linear-gradient(135deg, rgba(255,255,255,0.84), rgba(255,247,239,0.82));
       box-shadow: 0 18px 40px rgba(80,45,24,0.08);
     }
 
@@ -199,11 +198,7 @@
       text-wrap: pretty;
     }
 
-    .stats, .feature-list, .actions, .cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .stats, .feature-list, .actions { display: flex; flex-wrap: wrap; gap: 12px; }
     .stats { margin-top: 24px; }
     .actions { margin-top: 28px; }
 
@@ -350,10 +345,7 @@
     .detail-item:last-child { border-bottom: none; padding-bottom: 0; }
     .detail-item strong { display: block; margin-bottom: 4px; color: var(--text); font-size: .95rem; }
 
-    .social-links {
-      display: grid;
-      gap: 10px;
-    }
+    .social-links { display: grid; gap: 10px; }
     .social-link {
       display: flex;
       align-items: center;
@@ -365,27 +357,12 @@
       font-weight: 700;
     }
     .social-link:hover { transform: translateY(-3px); box-shadow: 0 14px 24px rgba(80,45,24,0.10); }
-    .social-link.instagram {
-      background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf);
-      color: #fff;
-    }
-    .social-link.facebook {
-      background: linear-gradient(135deg, #1877f2, #3b5998);
-      color: #fff;
-    }
-    .social-link.linktree {
-      background: #39e09b;
-      color: #0f172a;
-    }
-    .social-link span:last-child {
-      font-size: .85rem;
-      opacity: 0.92;
-    }
+    .social-link.instagram { background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf); color: #fff; }
+    .social-link.facebook { background: linear-gradient(135deg, #1877f2, #3b5998); color: #fff; }
+    .social-link.linktree { background: #39e09b; color: #0f172a; }
+    .social-link span:last-child { font-size: .85rem; opacity: 0.92; }
 
-    .delivery-links {
-      display: grid;
-      gap: 10px;
-    }
+    .delivery-links { display: grid; gap: 10px; }
     .delivery-link {
       display: flex;
       align-items: center;
@@ -418,15 +395,8 @@
       gap: 3px;
       min-width: 0;
     }
-    .delivery-text strong {
-      font-size: .95rem;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-    .delivery-text small {
-      color: var(--muted);
-      font-size: .82rem;
-    }
+    .delivery-text strong { font-size: .95rem; letter-spacing: -0.02em; color: var(--text); }
+    .delivery-text small { color: var(--muted); font-size: .82rem; }
 
     .map-card iframe {
       width: 100%;
@@ -440,127 +410,63 @@
 
     .reviews-section {
       border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(255,250,245,.98), rgba(248,239,229,.96));
-      border: 1px solid rgba(216,107,31,0.16);
-      box-shadow: 0 18px 60px rgba(80,45,24,0.10);
+      border: none;
+      box-shadow: 0 24px 70px rgba(160,78,6,.22);
+      overflow: hidden;
+      background: linear-gradient(180deg, #d76b10 0%, #f08a00 100%);
     }
-    .reviews-wrap { padding: 24px; }
-    .reviews-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
-    }
-    .reviews-badge {
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.58);
-      border: 1px solid rgba(96,63,41,0.08);
-      color: #8a5a35;
-      font-weight: 700;
-      font-size: .9rem;
-    }
-    .review-action {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ffb347, #ff7a18);
-      color: #111;
-      font-weight: 800;
-      font-size: .9rem;
-      border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: 0 10px 25px rgba(255,122,24,0.18);
-      transition: var(--transition);
-    }
-    .review-action:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 16px 35px rgba(255,122,24,0.25);
-    }
+    .reviews-wrap { padding: 34px 24px; overflow: hidden; }
     .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      display: flex;
       gap: 14px;
+      width: max-content;
+      animation: reviewsTicker 42s linear infinite;
+      will-change: transform;
     }
+    .reviews-grid:hover { animation-play-state: paused; }
     .review-card {
       padding: 18px;
       border-radius: 20px;
-      border: 1px solid rgba(96,63,41,0.08);
-      background: rgba(255,255,255,0.62);
+      border: none;
+      background: #f7f7f8;
       transition: var(--transition);
+      width: 292px;
+      min-width: 292px;
+      min-height: 206px;
+      box-shadow: none;
+      color: #111;
     }
-    .review-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(216,107,31,0.24);
-      background: rgba(255,255,255,0.74);
-    }
+    .review-card:hover { transform: translateY(-4px); }
     .review-top {
       display: flex;
-      align-items: start;
+      align-items: center;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     .review-name {
       margin: 0;
       font-size: 1rem;
       font-weight: 800;
-      color: var(--text);
+      color: #111;
       line-height: 1.25;
     }
     .review-meta {
-      color: var(--muted);
-      font-size: .85rem;
-      line-height: 1.5;
-    }
-    .review-price {
-      white-space: nowrap;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(216,107,31,0.10);
-      border: 1px solid rgba(216,107,31,0.18);
-      color: #8a5a35;
-      font-weight: 700;
-      font-size: .8rem;
+      color: #555;
+      font-size: .84rem;
+      line-height: 1.4;
     }
     .stars {
-      letter-spacing: .12em;
-      color: #d98b1f;
-      font-size: .95rem;
-      margin: 8px 0 8px;
+      letter-spacing: .06em;
+      color: #f4b400;
+      font-size: 1rem;
+      margin: 0 0 10px;
     }
     .review-card p {
-      margin: 0 0 10px;
-      color: #2d221d;
-      line-height: 1.65;
-      font-size: .95rem;
-    }
-    .review-scores {
-      color: var(--muted);
-      font-size: .88rem;
+      margin: 0;
+      color: #111;
       line-height: 1.55;
-      margin-bottom: 10px;
-    }
-    .review-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .tag {
-      padding: 7px 9px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.60);
-      border: 1px solid rgba(96,63,41,0.08);
-      color: #4a382f;
-      font-size: .78rem;
-      font-weight: 600;
+      font-size: .98rem;
     }
 
     .floating-whatsapp,
@@ -586,16 +492,8 @@
       box-shadow: 0 18px 40px rgba(37,211,102,0.26);
       color: #0f1b12;
     }
-    .floating-social.instagram {
-      bottom: 154px;
-      background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
-      color: white;
-    }
-    .floating-social.facebook {
-      bottom: 86px;
-      background: linear-gradient(135deg, #3b5998, var(--blue));
-      color: white;
-    }
+    .floating-social.instagram { bottom: 154px; background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); color: white; }
+    .floating-social.facebook { bottom: 86px; background: linear-gradient(135deg, #3b5998, var(--blue)); color: white; }
     .floating-social.reserva {
       bottom: 222px;
       background: linear-gradient(135deg, #ffd27a, #ffb347, #ff7a18);
@@ -643,9 +541,12 @@
       70% { transform: scale(1.12); opacity: 0; }
       100% { transform: scale(1.12); opacity: 0; }
     }
+    @keyframes reviewsTicker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
     @media (max-width: 1080px) {
-      .nav { justify-content: flex-start; }
       .hero-unified {
         grid-template-columns: 1fr;
         padding: 24px;
@@ -658,13 +559,7 @@
       }
       .cards-3,
       .two-col,
-      .reviews-grid,
-      .hero-wrap {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 900px) {
+      .hero-wrap { grid-template-columns: 1fr; }
       .quick-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
@@ -684,8 +579,6 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 8px;
-        overflow: visible;
-        padding-bottom: 0;
       }
       .nav a {
         padding: 11px 12px;
@@ -694,33 +587,28 @@
         text-align: center;
         white-space: normal;
       }
-      .nav .nav-reserve {
-        grid-column: 1 / -1;
-      }
+      .nav .nav-reserve { grid-column: 1 / -1; }
       .info-card,
       .social-card,
       .story-card,
       .menu-card,
       .map-card,
       .reviews-wrap,
-      .hero-unified {
-        padding: 18px;
-      }
+      .hero-unified { padding: 18px; }
       .hero h1 { font-size: clamp(2.45rem, 12vw, 3.8rem); }
       .lead { font-size: 1rem; line-height: 1.72; }
       .menu-grid { grid-template-columns: 1fr; }
       .actions,
       .stats,
-      .feature-list {
-        flex-direction: column;
-        align-items: stretch;
-      }
+      .feature-list { flex-direction: column; align-items: stretch; }
+      .quick-highlights { grid-template-columns: 1fr; }
       .btn { width: 100%; }
       .map-card iframe { height: 260px; }
       .social-link,
       .delivery-link { padding: 12px 14px; }
       .social-link span:last-child,
       .delivery-text small { font-size: .8rem; }
+      .review-card { width: 260px; min-width: 260px; }
       .floating-social,
       .floating-whatsapp {
         width: 54px;
@@ -741,15 +629,12 @@
       <div class="topbar">
         <div class="topbar-inner glass fade-up">
           <div class="brand">
-            <div class="brand-mark">
-              <img src="mascota-cw.png" alt="Mascota Crazy Wings">
-            </div>
+            <div class="brand-mark"><img src="mascota-cw.png" alt="Mascota Crazy Wings"></div>
             <div class="brand-text">
               <strong>Crazy Wings BCN</strong>
               <span>Street Food Colombiano en Barcelona</span>
             </div>
           </div>
-
           <nav class="nav">
             <a href="#inicio">🏠 Inicio</a>
             <a href="#informacion">📋 Información</a>
@@ -767,14 +652,12 @@
             <div class="eyebrow">Sabor, locura y buena vibra</div>
             <h1>Crazy Wings <span>BCN</span></h1>
             <p class="lead">Restaurante de comida rápida colombiana con mucha personalidad, estética inspirada en cómics de vieja guardia y alma de food truck. Un sitio pensado para venir con ganas de disfrutar, comer muy bien y quedarse con ganas de volver.</p>
-
             <div class="stats">
               <div class="pill">Terraza</div>
               <div class="pill">Platos veganos</div>
               <div class="pill">Wi‑Fi</div>
               <div class="pill">Precio medio: 10–20 €</div>
             </div>
-
             <div class="actions">
               <a class="btn btn-primary" href="https://drive.google.com/file/d/1iLZQvjmu5ORGtHCh0nDIccwX65xw_f1y/view" target="_blank" rel="noopener noreferrer">📖 Ver menú</a>
               <a class="btn btn-secondary" href="#ubicacion">📍 Ubicación</a>
@@ -783,7 +666,6 @@
               <a class="btn btn-primary" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">🍽️ Reservar mesa</a>
               <a class="btn btn-whatsapp" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">💬 Pedir por WhatsApp</a>
             </div>
-
             <div class="quick-highlights">
               <div class="quick-item">🔥 Sabor colombiano</div>
               <div class="quick-item">🍗 Alitas y burgers</div>
@@ -801,15 +683,12 @@
                 <img src="https://images.unsplash.com/photo-1608039755401-742074f0548d?auto=format&fit=crop&w=1200&q=80" alt="Alitas de pollo" style="width:100%; height:180px; object-fit:cover;">
               </div>
             </div>
-
             <div style="display:flex; justify-content:center; margin-bottom:18px;">
               <img src="logo-crazy-wings.png" alt="Logo Crazy Wings BCN" style="width:320px; max-width:100%; filter: drop-shadow(0 24px 44px rgba(216,107,31,.22));">
             </div>
-
             <div class="card-kicker">Especialidades</div>
             <h2>Street Food colombiano con presencia, carácter y un sabor que no pasa desapercibido.</h2>
             <p>Especializados en alitas con salsas únicas, hot dogs, burgers, tequeños, arepas y más. Una propuesta pensada para foodies, amantes del picante, grupos de amigos y clientes que buscan comer rico en un sitio con rollo propio.</p>
-
             <div class="menu-grid">
               <div class="menu-item">Alitas con salsas únicas</div>
               <div class="menu-item">Hot Dogs</div>
@@ -818,10 +697,7 @@
               <div class="menu-item">Arepas</div>
               <div class="menu-item">Más street food colombiano</div>
             </div>
-
-            <div class="loyalty">
-              <strong>Programa Crazy Fans:</strong> cada visita te acerca a un premio delicioso.
-            </div>
+            <div class="loyalty"><strong>Programa Crazy Fans:</strong> cada visita te acerca a un premio delicioso.</div>
           </div>
         </section>
       </div>
@@ -837,15 +713,7 @@
             <div class="detail-item"><strong>Dirección</strong>C/ de Padilla, 386, Horta-Guinardó, 08026 Barcelona</div>
             <div class="detail-item"><strong>Teléfono</strong><a href="tel:604822328">604 82 23 28</a></div>
             <div class="detail-item"><strong>Correo electrónico</strong><a href="mailto:crazywingsbcn@hotmail.com">crazywingsbcn@hotmail.com</a></div>
-            <div class="detail-item"><strong>Horario</strong>
-              Sábado: 13:00–24:00<br>
-              Domingo: 13:00–24:00<br>
-              Lunes: 18:00–24:00<br>
-              Martes: Cerrado<br>
-              Miércoles: Cerrado<br>
-              Jueves: 18:00–24:00<br>
-              Viernes: 18:00–24:00
-            </div>
+            <div class="detail-item"><strong>Horario</strong>Sábado: 13:00–24:00<br>Domingo: 13:00–24:00<br>Lunes: 18:00–24:00<br>Martes: Cerrado<br>Miércoles: Cerrado<br>Jueves: 18:00–24:00<br>Viernes: 18:00–24:00</div>
             <div class="detail-item"><strong>Precio orientativo</strong>10–20 € por persona</div>
           </div>
         </article>
@@ -863,28 +731,19 @@
 
     <section class="section">
       <div class="container cards-3">
-        <article class="social-card glass fade-up" id="contacto">
+        <article class="social-card glass fade-up">
           <h3 class="card-title">Redes sociales</h3>
           <div class="social-links">
             <a class="social-link instagram" href="https://www.instagram.com/crazywingsbcn/" target="_blank" rel="noopener noreferrer">
-              <span style="display:flex;align-items:center;gap:10px;">
-                <img src="https://cdn.worldvectorlogo.com/logos/instagram-2016-5.svg" alt="Instagram" style="width:20px;height:20px;">
-                <strong>Instagram</strong>
-              </span>
+              <span style="display:flex;align-items:center;gap:10px;"><img src="https://cdn.worldvectorlogo.com/logos/instagram-2016-5.svg" alt="Instagram" style="width:20px;height:20px;"><strong>Instagram</strong></span>
               <span>@crazywingsbcn</span>
             </a>
             <a class="social-link facebook" href="https://www.facebook.com/CRAZYWINGSBCN" target="_blank" rel="noopener noreferrer">
-              <span style="display:flex;align-items:center;gap:10px;">
-                <img src="https://cdn.worldvectorlogo.com/logos/facebook-3-2.svg" alt="Facebook" style="width:20px;height:20px;">
-                <strong>Facebook</strong>
-              </span>
+              <span style="display:flex;align-items:center;gap:10px;"><img src="https://cdn.worldvectorlogo.com/logos/facebook-3-2.svg" alt="Facebook" style="width:20px;height:20px;"><strong>Facebook</strong></span>
               <span>Crazy Wings BCN</span>
             </a>
             <a class="social-link linktree" href="https://linktr.ee/Crazywingsbcn" target="_blank" rel="noopener noreferrer">
-              <span style="display:flex;align-items:center;gap:10px;">
-                <img src="https://cdn.worldvectorlogo.com/logos/linktree-2.svg" alt="Linktree" style="width:20px;height:20px;">
-                <strong>Linktree</strong>
-              </span>
+              <span style="display:flex;align-items:center;gap:10px;"><img src="https://cdn.worldvectorlogo.com/logos/linktree-2.svg" alt="Linktree" style="width:20px;height:20px;"><strong>Linktree</strong></span>
               <span>Menú y accesos</span>
             </a>
           </div>
@@ -895,15 +754,15 @@
           <div style="display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(255,255,255,.62); border:1px solid rgba(216,107,31,.12); color:#8a5a35; font-size:.82rem; font-weight:800; margin-bottom:12px;">Apps disponibles</div>
           <p>Realiza tu pedido desde nuestras plataformas de reparto disponibles en Barcelona.</p>
           <div class="delivery-links" style="margin-top:18px; grid-template-columns:1fr;">
-            <a class="delivery-link glovo" href="https://glovoapp.com/es/es/barcelona/stores/crazy-wings-bcn-bcn?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener noreferrer">
+            <a class="delivery-link" href="https://glovoapp.com/es/es/barcelona/stores/crazy-wings-bcn-bcn?utm_source=google&utm_medium=organic&utm_campaign=google_reserve_place_order_action" target="_blank" rel="noopener noreferrer">
               <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/glovo-1.svg" alt="Glovo" style="width:100%;height:100%;object-fit:contain;"></span>
               <span class="delivery-text"><strong>Glovo</strong><small>Entrega a domicilio</small></span>
             </a>
-            <a class="delivery-link justeat" href="https://www.just-eat.es/restaurants-crazy-wings-and--bcn-barcelona/menu?serviceType=collection&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener noreferrer">
+            <a class="delivery-link" href="https://www.just-eat.es/restaurants-crazy-wings-and--bcn-barcelona/menu?serviceType=collection&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener noreferrer">
               <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/just-eat.svg" alt="Just Eat" style="width:100%;height:100%;object-fit:contain;"></span>
               <span class="delivery-text"><strong>Just Eat</strong><small>Pedido online</small></span>
             </a>
-            <a class="delivery-link uber" href="https://www.ubereats.com/es/store/crazy-wings-%26-%2B-bcn/NdfNtVPbWs2m6wFVDTRvkw?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer">
+            <a class="delivery-link" href="https://www.ubereats.com/es/store/crazy-wings-%26-%2B-bcn/NdfNtVPbWs2m6wFVDTRvkw?diningMode=PICKUP&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer">
               <span class="delivery-logo" style="background:#fff; padding:6px;"><img src="https://cdn.worldvectorlogo.com/logos/uber-eats.svg" alt="Uber Eats" style="width:100%;height:100%;object-fit:contain;"></span>
               <span class="delivery-text"><strong>Uber Eats</strong><small>Recogida / pedido online</small></span>
             </a>
@@ -928,40 +787,6 @@
             <a class="btn btn-secondary" href="https://wa.me/34604822328?text=Hola%20Crazy%20Wings%2C%20quiero%20consultar%20por%20una%20reserva%20de%20mesa." target="_blank" rel="noopener noreferrer">📲 Consultar por WhatsApp</a>
           </div>
         </div>
-
-        <div class="cards-3">
-          <article class="info-card glass fade-up">
-            <h3 class="card-title">Sistema de reservas</h3>
-            <div class="detail-list">
-              <div class="detail-item"><strong>Reserva centralizada</strong>Acceso directo al sistema de reservas integrado con Google Maps.</div>
-              <div class="detail-item"><strong>Disponibilidad real</strong>Disponibilidad actualizada con horarios y opciones según el servicio del restaurante.</div>
-              <div class="detail-item"><strong>Más confianza</strong>Proceso de reserva en un entorno seguro, fiable y reconocido por los usuarios.</div>
-            </div>
-          </article>
-
-          <article class="social-card glass fade-up delay-1">
-            <h3 class="card-title">Ideal para el cliente</h3>
-            <div class="feature-list" style="margin-top:0;">
-              <div class="pill">Reserva en pocos pasos</div>
-              <div class="pill">Fecha y hora claras</div>
-              <div class="pill">Sistema profesional</div>
-              <div class="pill">Consulta por WhatsApp</div>
-            </div>
-            <p style="margin-top:18px; color:var(--muted); line-height:1.75;">Una forma cómoda y rápida de reservar mesa antes de visitar el restaurante.</p>
-            <div class="detail-list" style="margin-top:18px;">
-              <div class="detail-item"><strong>Acceso directo</strong>Entrada inmediata al calendario de reservas con disponibilidad actualizada.</div>
-              <div class="detail-item"><strong>Proceso ágil</strong>Selección rápida de fecha, hora y número de personas.</div>
-            </div>
-          </article>
-
-          <article class="story-card glass fade-up delay-2">
-            <h3 class="card-title">Reserva y disfruta</h3>
-            <p>Reserva tu mesa y disfruta de una experiencia gastronómica completa en un ambiente dinámico, ideal para compartir con amigos, pareja o familia.</p>
-            <div class="actions" style="margin-top:18px;">
-              <a class="btn btn-primary" href="https://www.google.com/maps/reserve/v/dine/c/DMhoug0Rlo0?hl=es-ES&source=pa" target="_blank" rel="noopener noreferrer">Abrir reservas</a>
-            </div>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -969,126 +794,119 @@
       <div class="container">
         <div class="reviews-section glass fade-up">
           <div class="reviews-wrap">
-            <div class="reviews-header">
-              <div>
-                <div class="eyebrow">Reseñas verificadas</div>
-                <h3 class="card-title" style="margin-top:16px;">Opiniones destacadas de Google Maps</h3>
-                <p class="reviews-intro">Opiniones reales de clientes obtenidas desde el perfil de Google Maps, reflejando la experiencia y calidad del servicio ofrecido.</p>
-              </div>
-              <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
-                <div class="reviews-badge">★★★★★ Valoraciones destacadas</div>
-                <a class="review-action" href="https://www.google.com/search?sca_esv=4e0bfa84728bf4dd&sxsrf=ANbL-n4pMLPsmrIJlWJ1eNJZif9xzlmumQ:1774562317922&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaeKKLo-BZYmR_JZAchwutxG23Ojb8ilCa02_DYa9vYEbAodjWMFMr-SWa_fPYHYWumyKEJyfk0rh5dW5DQ5nWEH64kAjJt3DI9NXcK-pPpgMozQzA%3D%3D&q=Crazy+Wings+%26+%2B+Bcn+Rese%C3%B1as&sa=X&ved=2ahUKEwjRut3kx76TAxWRT6QEHWz8EvwQ0bkNegQIPRAH&biw=1920&bih=945&dpr=1" target="_blank" rel="noopener noreferrer">⭐ Añadir reseña</a>
+            <div style="text-align:center; margin-bottom:20px; color:#111;">
+              <div style="font-size:2rem; font-weight:900; letter-spacing:-.03em;">EXCELENTE</div>
+              <div style="font-size:1.8rem; line-height:1; margin-top:6px; color:#ffd700;">★★★★☆</div>
+              <div style="margin-top:8px; font-size:1.04rem; font-weight:700; color:#20140c;">4,5 (+700 reseñas)</div>
+              <div style="margin-top:10px; display:flex; justify-content:center;"><img src="https://cdn.worldvectorlogo.com/logos/google-1-1.svg" alt="Google" style="height:30px;"></div>
+              <div style="margin-top:14px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+                <a href="https://www.google.com/maps/place/Crazy+Wings+%26+%2B+Bcn/@41.4122906,2.1687611,17z/data=!4m8!3m7!1s0x12a4a2c3b6274289:0x8f262e5900d93eca!8m2!3d41.4122906!4d2.1687611!9m1!1b1!16s%2Fg%2F11bv2fgsn8?hl=es-ES&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" style="background:#fff; color:#111; padding:12px 18px; border-radius:999px; font-weight:800; display:inline-flex; align-items:center; gap:8px; box-shadow:0 10px 20px rgba(0,0,0,.10);">🔎 Ver reseñas</a>
+                <a href="https://www.google.com/search?sca_esv=b692c664f4ad5dff&sxsrf=ANbL-n5m8E8DgC8EMwJXmkt5IPLpQO16Rg:1774745138095&q=Crazy+Wings+%26+%2B+Bcn+Rese%C3%B1as&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDA2NLG0MLI0NTM2trQ0MDEyMNrAyPiKUca5KLGqUiE8My-9WEFNQVvBKTlPISi1OPXwxsTiRax4pQGQljr2WQAAAA&rldimm=10314982956339904202&tbm=lcl&hl=es-ES&sa=X&ved=2ahUKEwjdopfs8MOTAxWGlP0HHWK4AsEQ9fQKegQIVBAG&biw=1920&bih=945&dpr=1#lkt=LocalPoiReviews&lrd=0x12a4a2c3b6274289:0x8f262e5900d93eca,3,,,," target="_blank" rel="noopener noreferrer" style="background:#111; color:#fff; padding:12px 18px; border-radius:999px; font-weight:800; display:inline-flex; align-items:center; gap:8px; box-shadow:0 10px 20px rgba(0,0,0,.12);">⭐ Dejar reseña</a>
               </div>
             </div>
 
             <div class="reviews-grid">
-              <article class="review-card">
-                <div class="review-top">
-                  <div>
-                    <h4 class="review-name">Alejandra S.S</h4>
-                    <div class="review-meta">Local Guide · 160 reseñas · 93 fotos · Hace 2 meses</div>
-                  </div>
-                  <div class="review-price">20–30 €</div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p>Siempre vamos con mi hermana a este sitio y nos encanta todo. La comida es deliciosa, el servicio excelente y el sabor brutal.</p>
-                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5</div>
-                <div class="review-tags">
-                  <span class="tag">Hamburguesa</span>
-                  <span class="tag">Tequeños</span>
-                  <span class="tag">Crazy Burguer</span>
-                </div>
-              </article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">saaid one way</h4><div class="review-meta">hace 3 semanas</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Increíble experiencia. Comida auténtica, deliciosa y con un toque muy especial.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#5d6bc8;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">P</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">pau sanchez</h4><div class="review-meta">hace un mes</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Excelente lugar, muy aseado, trato amable y un ambiente muy agradable.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#8b5cf6;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">A</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Angelo</h4><div class="review-meta">hace 9 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Uno de los mejores restaurantes latinos de Barcelona. Siempre fieles.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sophie Carenzo</h4><div class="review-meta">hace 6 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Ambiente súper animado, atención excelente y comida deliciosa. Volveremos.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0ea5e9;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">K</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Kerly Skaret</h4><div class="review-meta">hace 2 años</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Primera vez y muy contentos. Recomendamos la picada crazy. Salimos felices.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#22c55e;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">V</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Valentina Hernandez</h4><div class="review-meta">hace un mes</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Vengo desde Valencia y entre el ambiente y la comida me siento en Colombia.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#f59e0b;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">D</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">David Gómez</h4><div class="review-meta">hace un año</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Picada espectacular, calidad-precio inmejorable e ideal para compartir.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ec4899;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">O</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Oscar Mauricio Gil Diaz</h4><div class="review-meta">hace 2 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Comida callejera auténtica, arepa generosa y totalmente recomendada.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">M</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Milena Paulina Espinoza</h4><div class="review-meta">hace 8 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Las chicas muy amables, la comida muy rápida y deliciosa. Muy buena experiencia.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">J</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Juan Andres Martinez Marin</h4><div class="review-meta">hace 3 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Comida súper rica, atención excelente y ambiente muy agradable.</p></article>
 
-              <article class="review-card">
-                <div class="review-top">
-                  <div>
-                    <h4 class="review-name">Juan Andres Martinez Marin</h4>
-                    <div class="review-meta">3 reseñas · 1 foto · Hace 3 meses</div>
-                  </div>
-                  <div class="review-price">10–20 €</div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p>Comida súper rica, atención excelente y ambiente muy agradable. Lo sigo eligiendo siempre.</p>
-                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5</div>
-                <div class="review-tags">
-                  <span class="tag">Picada Colombiana</span>
-                  <span class="tag">Crazy Burguer</span>
-                  <span class="tag">Mix Alitas y Costillas</span>
-                </div>
-              </article>
-
-              <article class="review-card">
-                <div class="review-top">
-                  <div>
-                    <h4 class="review-name">Mauricio Perez</h4>
-                    <div class="review-meta">Local Guide · 15 reseñas · 6 fotos · Hace 3 meses</div>
-                  </div>
-                  <div class="review-price">10–20 €</div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p>Excelente atención, muy buena presentación y recomendado 100%.</p>
-                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5</div>
-                <div class="review-tags">
-                  <span class="tag">Tequeños</span>
-                  <span class="tag">Patacón Mixto</span>
-                  <span class="tag">Alitas Super Crazy</span>
-                </div>
-              </article>
-
-              <article class="review-card">
-                <div class="review-top">
-                  <div>
-                    <h4 class="review-name">Milena Paulina Espinoza</h4>
-                    <div class="review-meta">3 reseñas · 1 foto · Hace 8 meses</div>
-                  </div>
-                  <div class="review-price">10–20 €</div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p>Fuimos a cenar con mi suegra y no pudimos escoger un mejor sitio. Las chicas muy amables, la comida muy rápida y deliciosa.</p>
-                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5</div>
-                <div class="review-tags">
-                  <span class="tag">Servicio rápido</span>
-                  <span class="tag">Atención amable</span>
-                  <span class="tag">Comida deliciosa</span>
-                </div>
-              </article>
-
-              <article class="review-card">
-                <div class="review-top">
-                  <div>
-                    <h4 class="review-name">Marleo Cuellar</h4>
-                    <div class="review-meta">Local Guide · 25 reseñas · 49 fotos · Hace 4 meses</div>
-                  </div>
-                  <div class="review-price">Local</div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p>Muy bonito el local, la comida me transportó a mi Colombia. Un perro muy rico.</p>
-                <div class="review-scores">Comida: 5/5 · Servicio: 5/5 · Ambiente: 5/5</div>
-                <div class="review-tags">
-                  <span class="tag">Ambiente auténtico</span>
-                  <span class="tag">Perros calientes</span>
-                  <span class="tag">Sabor colombiano</span>
-                </div>
-              </article>
-
-              <article class="review-card">
-                <div class="review-top">
-                  <div>
-                    <h4 class="review-name">Nestor Correa</h4>
-                    <div class="review-meta">Local Guide · 13 reseñas · 16 fotos · Hace 6 meses</div>
-                  </div>
-                  <div class="review-price">30–40 €</div>
-                </div>
-                <div class="stars">★★★★★</div>
-                <p>Fuimos por alitas pero pedimos una picada para 2. Estuvo genial, deliciosa y variada. Súper recomendado.</p>
-                <div class="review-scores">Ideal para compartir · Muy recomendable</div>
-                <div class="review-tags">
-                  <span class="tag">Picada para 2</span>
-                  <span class="tag">Ideal para compartir</span>
-                  <span class="tag">Repetir visita</span>
-                </div>
-              </article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">saaid one way</h4><div class="review-meta">hace 3 semanas</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Increíble experiencia. Comida auténtica, deliciosa y con un toque muy especial.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#5d6bc8;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">P</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">pau sanchez</h4><div class="review-meta">hace un mes</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Excelente lugar, muy aseado, trato amable y un ambiente muy agradable.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#8b5cf6;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">A</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Angelo</h4><div class="review-meta">hace 9 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Uno de los mejores restaurantes latinos de Barcelona. Siempre fieles.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">S</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Sophie Carenzo</h4><div class="review-meta">hace 6 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Ambiente súper animado, atención excelente y comida deliciosa. Volveremos.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0ea5e9;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">K</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Kerly Skaret</h4><div class="review-meta">hace 2 años</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Primera vez y muy contentos. Recomendamos la picada crazy. Salimos felices.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#22c55e;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">V</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Valentina Hernandez</h4><div class="review-meta">hace un mes</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Vengo desde Valencia y entre el ambiente y la comida me siento en Colombia.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#f59e0b;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">D</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">David Gómez</h4><div class="review-meta">hace un año</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Picada espectacular, calidad-precio inmejorable e ideal para compartir.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ec4899;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">O</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Oscar Mauricio Gil Diaz</h4><div class="review-meta">hace 2 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Comida callejera auténtica, arepa generosa y totalmente recomendada.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#ef4444;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">M</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Milena Paulina Espinoza</h4><div class="review-meta">hace 8 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Las chicas muy amables, la comida muy rápida y deliciosa. Muy buena experiencia.</p></article>
+              <article class="review-card"><div class="review-top"><div style="display:flex;align-items:center;gap:12px;min-width:0;"><div style="width:42px;height:42px;border-radius:50%;background:#0b5a4a;color:#fff;display:grid;place-items:center;font-weight:800;flex:0 0 42px;">J</div><div style="min-width:0;"><h4 class="review-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Juan Andres Martinez Marin</h4><div class="review-meta">hace 3 meses</div></div></div></div><div class="stars">★★★★★ <span style="display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; background:linear-gradient(135deg,#4da3ff,#1a73e8); box-shadow:0 4px 10px rgba(26,115,232,.22); margin-left:6px; vertical-align:middle; border:1px solid rgba(255,255,255,.75);">
+  <svg viewBox="0 0 24 24" aria-hidden="true" style="width:11px; height:11px; display:block;">
+    <path fill="#fff" d="M9.55 16.2 5.8 12.45l1.4-1.4 2.35 2.35 7.25-7.25 1.4 1.4-8.65 8.65Z"></path>
+  </svg>
+</span></div><p>Comida súper rica, atención excelente y ambiente muy agradable.</p></article>
             </div>
           </div>
         </div>
